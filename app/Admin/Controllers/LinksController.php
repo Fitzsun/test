@@ -92,7 +92,6 @@ class LinksController extends Controller
         return Admin::form(Links::class, function (Form $form) {
 
             $form->display('id', 'ID');
-
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });

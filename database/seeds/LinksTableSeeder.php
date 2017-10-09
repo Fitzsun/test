@@ -11,6 +11,7 @@ class LinksTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Links::class,10)->create();
+        // php artisan db:seed --class=UserTableSeeder  填充数据  不加--class填充所有的表
+        factory(App\Links::class,12)->create();
     }
 }

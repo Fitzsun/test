@@ -24,3 +24,30 @@ Route::group(['prefix' => 'dashboard'], function () {
     // path参数; ?可有可无(0和1); 参数都用大括号括起来; where对其进行限制(正则); /正则中需要用\反斜杠进行转义 \w字母数字和下划线 * 0~正无穷  + 1~正无穷
     Route::get('{path?}','HomeController@dashboard')->where('path','[\/\w\.-]*');
 });
+
+// 使用路由群组,使用路由前缀,专门用来处理ajax请求,返回公用的头和尾
+Route::group(['prefix' => 'ajax'], function () {
+    Route::get('/links','AjaxController@links');
+});
+
+
+
+Route::get('/index', 'UserController@index');
+Route::get('/about', 'UserController@about');
+Route::get('/airTest', 'UserController@airTest');
+Route::get('/news', 'UserController@news');
+Route::get('/newsCenterDetail', 'UserController@newsCenterDetail');
+Route::get('/newSys', 'UserController@newSys');
+Route::get('/product', 'UserController@product');
+Route::get('/productCenterDetail', 'UserController@productCenterDetail');
+Route::get('/success', 'UserController@success');
+Route::get('/treatment', 'UserController@treatment');
+
+// 下述方法报错: 
+// Route::get('/index', function(){
+//     return view()->file('/public/page.html');
+// });
+
+
+
+
