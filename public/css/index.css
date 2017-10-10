@@ -1,0 +1,438 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+.bd {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-inner {
+  position: relative;
+}
+.carousel-inner li a {
+  display: block;
+}
+.carousel-caption {
+  position: relative;
+}
+.carousel-indicator {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100px;
+  height: 14px;
+  line-height: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.carousel-indicator .active {
+  background: #48abff;
+}
+.carousel-indicator > li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #48abff;
+}
+.carousel-control {
+  position: absolute;
+  height: 100%;
+  width: 24px;
+  line-height: 400px;
+}
+.carousel-control.prev {
+  top: 0;
+  right: 50%;
+  margin-right: 576px;
+}
+.carousel-control.next {
+  top: 0;
+  left: 50%;
+  margin-left: 576px;
+}
+.heading {
+  text-align: center;
+}
+.heading > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+.heading > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+#desc {
+  width: 100%;
+}
+#desc main {
+  width: 1200px;
+  margin: 0 auto;
+}
+#desc main .desc-list {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 160px 0 50px 0;
+}
+#desc main .desc-list dl {
+  float: left;
+  width: 350px;
+}
+#desc main .desc-list dl dt {
+  font-weight: bold;
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+}
+#desc main .desc-list dl dd {
+  font-size: 14px;
+  text-align: center;
+}
+#desc main .desc-list dl dd:first-of-type {
+  color: #999;
+  margin: 15px 0 20px 0;
+}
+#desc main .desc-list dl dd:nth-of-type(2) {
+  margin-bottom: 34px;
+}
+#desc main .desc-list dl dd a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #d1eaff;
+  color: #666;
+  border-radius: 5px;
+}
+#desc main .desc-list dl:nth-of-type(2) {
+  margin: 0 75px;
+}
+#desc main .product-center {
+  text-align: center;
+}
+#desc main .product-center > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+#desc main .product-center > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+#desc main .product-center ul:first-of-type {
+  width: 968px;
+  margin: 0 auto;
+}
+#desc main .product-center ul:nth-of-type(2) {
+  width: 716px;
+  margin: 0 auto;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+#desc main .product-center ul li {
+  float: left;
+  width: 212px;
+  height: 212px;
+  margin-left: 40px;
+  position: relative;
+}
+#desc main .product-center ul li a {
+  position: absolute;
+  top: 106px;
+  left: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+  width: 149.91px;
+  height: 149.91px;
+}
+#desc main .product-center ul li a span {
+  display: none;
+  line-height: 149.91px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+#desc main .product-center ul li a:hover {
+  background: rgba(72, 171, 255, 0.5);
+}
+#desc main .product-center ul li a:hover span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#desc main .product-center ul li:first-of-type {
+  margin-left: 0;
+}
+#desc main .product-center ul li:first-of-type a {
+  border: 1px solid #d5d5d5;
+}
+#desc main .product-center ul li:first-of-type a span {
+  display: block;
+  font-size: 16px;
+  color: #666;
+}
+#desc main .company-desc {
+  text-align: center;
+}
+#desc main .company-desc > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+#desc main .company-desc > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+#desc main .company-desc > p:last-of-type {
+  font-size: 14px;
+  color: #666;
+  width: 800px;
+  margin: 0 auto;
+}
+#bottom main {
+  width: 1200px;
+  margin: 0 auto;
+}
+#bottom main .successful-cases {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+#bottom main .successful-cases > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+#bottom main .successful-cases > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+#bottom main .successful-cases .list-items li {
+  margin-left: 10px;
+  position: relative;
+  border: 1px solid #eee;
+  float: left;
+  width: 232px;
+  height: 375px;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+#bottom main .successful-cases .list-items li:first-of-type {
+  margin-left: 0;
+}
+#bottom main .successful-cases .list-items li dl dt {
+  font-weight: bold;
+  margin: 16px 0 30px 0;
+}
+#bottom main .successful-cases .list-items li dl dd {
+  font-size: 14px;
+  line-height: 22px;
+  color: #999;
+  text-align: left;
+}
+#bottom main .successful-cases .list-items li dl dd:last-of-type {
+  position: relative;
+}
+#bottom main .successful-cases .list-items li dl dd:last-of-type > p {
+  position: absolute;
+  margin: 0 0 0 70px;
+  top: 0;
+}
+#bottom main .successful-cases .list-items li span {
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: transparent;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+#bottom main .successful-cases .list-items li:hover {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+  -webkit-box-shadow: -2px 0 5px #cccccc, /*左边阴影*/ 2px 0 10px #cccccc, /*右边阴影*/ 0 -2px 5px #cccccc, /*顶部阴影*/ 0 2px 10px #cccccc;
+          box-shadow: -2px 0 5px #cccccc, /*左边阴影*/ 2px 0 10px #cccccc, /*右边阴影*/ 0 -2px 5px #cccccc, /*顶部阴影*/ 0 2px 10px #cccccc;
+  /*底边阴影*/
+}
+#bottom main .successful-cases .list-items li:hover span {
+  background: #48abff;
+}
+#bottom main .successful-cases .list-items > a {
+  display: block;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #48abff;
+  border-radius: 5px;
+  margin: 30px auto 50px;
+  font-size: 14px;
+  color: #48abff;
+}
+#bottom main .successful-cases .list-items > a:hover {
+  color: #fff;
+  background: #48abff;
+}
+#bottom main .honor {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#bottom main .honor > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+#bottom main .honor > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+#bottom main .honor > ul:first-of-type {
+  margin-bottom: 50px;
+}
+#bottom main .honor > ul:first-of-type > li {
+  float: left;
+  margin-left: 60px;
+}
+#bottom main .honor > ul:first-of-type > li:first-of-type {
+  margin-left: 0;
+}
+#bottom main .honor > ul:first-of-type > li div {
+  width: 192px;
+  height: 150px;
+  line-height: 150px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+#bottom main .honor > ul:first-of-type > li div img {
+  vertical-align: middle;
+}
+#bottom main .honor > ul:first-of-type > li > p {
+  margin: 0;
+}
+#bottom main .honor ul:last-of-type {
+  cursor: default;
+}
+#bottom main .honor ul:last-of-type li {
+  border-left: 1px solid #ccc;
+  float: left;
+  width: 300px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 0;
+}
+#bottom main .honor ul:last-of-type li:hover > div {
+  -webkit-transform: perspective(600px) rotateY(360deg);
+          transform: perspective(600px) rotateY(360deg);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+#bottom main .honor ul:last-of-type li > div {
+  line-height: 100px;
+  padding: 0 25px;
+}
+#bottom main .honor ul:last-of-type li > div img {
+  vertical-align: baseline;
+}
+#bottom main .honor ul:last-of-type li > dl {
+  text-align: left;
+  width: 130px;
+}
+#bottom main .honor ul:last-of-type li > dl dt {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 16px;
+}
+#bottom main .honor ul:last-of-type li > dl span {
+  display: inline-block;
+  position: relative;
+}
+#bottom main .honor ul:last-of-type li > dl span i {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+#bottom main .honor ul:last-of-type li > dl span:hover i {
+  width: 100%;
+  border-bottom: 1px solid #48abff;
+}
+#bottom main .honor ul:last-of-type li > dl dd {
+  font-size: 14px;
+  color: #999;
+}
+#bottom main .honor ul:last-of-type li:first-of-type {
+  border-left: none;
+}
+#bottom main .news {
+  width: 1200px;
+  margin: 0 auto 50px;
+}
+#bottom main .news > p {
+  text-align: left;
+  margin-bottom: 28px;
+  color: #666;
+}
+#bottom main .news #slidy-container {
+  float: left;
+  width: 580px;
+  overflow: hidden;
+}
+#bottom main .news #slidy-container a {
+  display: block;
+}
+#bottom main .news .list-news {
+  text-align: left;
+  float: left;
+  height: 300px;
+  width: 580px;
+  margin-left: 40px;
+}
+#bottom main .news .list-news > li {
+  margin: 25px 0;
+}
+#bottom main .news .list-news > li a {
+  font-size: 16px;
+  color: #666;
+}
+#bottom main .news .list-news > li:hover a {
+  color: #48abff;
+}
+#bottom main .news .list-news > li > span {
+  font-size: 14px;
+  color: #999;
+  float: right;
+}

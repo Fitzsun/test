@@ -1,0 +1,299 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  text-align: center;
+  color: #666;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+ul,
+li,
+dl,
+dt,
+dd,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: '';
+}
+.clearfix:after {
+  clear: both;
+}
+.overflow:before {
+  content: '';
+  display: table;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.icon {
+  display: inline-block;
+}
+#header {
+  height: 90px;
+  line-height: 90px;
+  width: 100%;
+}
+#header .logoBar {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+#header .logoBar h1 {
+  margin: 0;
+}
+#header .logoBar .logoBar-right {
+  cursor: default;
+  float: right;
+}
+#header .logoBar .logoBar-right span {
+  display: inline-block;
+}
+#header .logoBar .logoBar-right span i {
+  display: inline-block;
+  margin-right: 10px;
+}
+#header .logoBar .logoBar-right span:first-of-type i {
+  width: 19px;
+  height: 22px;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+#header .logoBar .logoBar-right span:last-of-type {
+  margin-left: 55px;
+}
+#header .logoBar .logoBar-right span:last-of-type i {
+  width: 24px;
+  height: 18px;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+#header .logoBar .logoBar-left {
+  width: 50%;
+  height: 100%;
+}
+#header .logoBar .logoBar-left > div {
+  float: left;
+  height: 100%;
+}
+#header .logoBar .logoBar-left > div a {
+  display: block;
+  height: 90px;
+  width: 150px;
+}
+#header .logoBar .logoBar-left > div a img {
+  vertical-align: middle;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+}
+#header .logoBar .logoBar-left > div:last-child {
+  margin-left: 66px;
+  position: relative;
+}
+#header .logoBar .logoBar-left > div:last-child img {
+  position: absolute;
+  bottom: 30px;
+}
+#navbar {
+  position: absolute;
+  z-index: 100;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.008)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.008));
+}
+#navbar > ul {
+  width: 1200px;
+  margin: 0 auto;
+}
+#navbar > ul > .active a {
+  color: #000;
+}
+#navbar > ul > li {
+  position: relative;
+  float: left;
+}
+#navbar > ul > li:hover i {
+  border-top: 7px solid #000;
+}
+#navbar > ul > li > ul {
+  list-style: none;
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-15px);
+          transform: translateX(-50%) translateY(-15px);
+  background: rgba(0, 0, 0, 0.2);
+}
+#navbar > ul > li > ul > li {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-bottom: 1px dashed #fff;
+}
+#navbar > ul > li > ul > li:last-of-type {
+  border: none;
+}
+#navbar > ul > li > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#navbar > ul > li > ul > li:hover a {
+  color: #000;
+}
+#navbar > ul > li > a {
+  color: #fff;
+  display: block;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  font-size: 18px;
+}
+#navbar > ul > li > a i {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  border: 7px solid transparent;
+  border-top: 7px solid #fff;
+}
+#navbar > ul > li:hover > a {
+  color: #000;
+}
+#navbar > ul > li:hover > ul {
+  display: block;
+}
+#content-bot .friendly-link {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+#content-bot .friendly-link > P {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 18px;
+}
+#content-bot .friendly-link ul li {
+  float: left;
+  width: 200px;
+  margin-bottom: 10px;
+}
+#content-bot .friendly-link ul li a {
+  font-size: 14px;
+  color: #666;
+}
+#footer {
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+}
+#footer > div {
+  height: 100%;
+  background: #48abff;
+}
+#footer .content {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+#footer .content > p {
+  margin: 50px 0;
+  font-size: 18px;
+  text-align: center;
+}
+#footer .content > p span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+#footer .content .main {
+  height: 208px;
+}
+#footer .content .main > div {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-left: 30px;
+}
+#footer .content .main .footer-left {
+  position: relative;
+  border-right: 1px solid #fff;
+}
+#footer .content .main .footer-left > div {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#footer .content .main .footer-left > div p {
+  margin: 16px 0;
+  font-size: 18px;
+}
+#footer .content .main .footer-right {
+  position: relative;
+}
+#footer .content .main .footer-right > div:first-of-type {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+#footer .content .main .footer-right > div:first-of-type p {
+  margin: 0;
+}
+#footer .content .main .footer-right > div:first-of-type p:first-of-type {
+  margin: 38px 0 30px 0;
+}
+#footer .content .main .footer-right > div:first-of-type p:nth-of-type(3) {
+  margin: 10px 0 30px 0;
+}
+#footer .content .main .footer-right > div:first-of-type p:last-of-type {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+#footer .content .main .footer-right > div:first-of-type div {
+  height: 5px;
+}
+#footer .content .main .footer-right > div:first-of-type #line {
+  position: absolute;
+  bottom: 0;
+}
+#footer .content .main .footer-right > div:last-of-type {
+  position: absolute;
+  right: 0;
+  top: -13.5px;
+}

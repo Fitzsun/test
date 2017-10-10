@@ -1,0 +1,202 @@
+#banner{
+  width:100%;
+  height:400px;
+  margin-bottom:50px;
+}
+
+
+main{
+  width:1200px;
+  margin:0 auto 50px;
+}
+.list-tabs{
+  // IE hack
+  width:1200px;
+  margin:0 auto;
+  margin-bottom:50px;
+  text-align: center;
+  input[type='radio']{
+    display: none;
+    &:checked + label{
+      position: relative;
+      text-align: center;
+      border-bottom:1px solid #48abff;
+      &:after{
+        content:'';
+        display: block;
+        position: absolute;
+        width:5px;
+        height:5px;
+        background:#58abff;
+        top:100%;
+        left:50%;
+        transform: translate(-50%,-50%) rotateZ(45deg);
+      }
+    }
+  }
+  label{
+    width:100px;
+    padding:10px;
+    display: block;
+    cursor:pointer;
+    float:left;
+    &:first-of-type{
+      margin-left:400px;
+    }
+  }
+}
+
+.tabs-content{
+  padding-top:50px;
+  display: none;
+  clear:left;
+}
+
+.list-tabs input:nth-of-type(1):checked~.tabs-content:nth-of-type(1),
+.list-tabs input:nth-of-type(2):checked~.tabs-content:nth-of-type(2),
+.list-tabs input:nth-of-type(3):checked~.tabs-content:nth-of-type(3),
+.list-tabs input:nth-of-type(4):checked~.tabs-content:nth-of-type(4){
+  display: block;
+}
+
+
+.list-icons{
+  display: flex;
+  width:1200px;
+  justify-content: space-around;
+  margin-bottom:120px;
+  li{
+    width:220px;
+  }
+  dt{
+    color:#666;
+    font-size: 16px;
+    margin:20px 0 10px 0;
+  }
+  dd{
+    color:#999;
+  }
+}
+
+
+.content-bot{
+  position: relative;
+}
+
+
+.bot-left{
+  // width:50%;
+  text-align: left;
+  dl{
+    padding-left:15px;
+    margin-bottom:60px;
+  }
+  dt{
+    position: relative;
+    &:before{
+      content:'';
+      display: block;
+      position: absolute;
+      left:-15px;
+      top:50%;
+      transform: translateY(-50%);
+      width:8px;
+      height:8px;
+      border-radius: 4px;
+      background:#48abff;
+    }
+    margin-bottom:14px;
+  }
+}
+
+.list-imgs{
+  position: absolute;
+  left:55%;
+  top:50%;
+  transform: translateY(-50%);
+  width:410px;
+  height:410px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  li{
+    width:195px;
+    height:195px;
+    border-radius:18px;
+    &:last-of-type{
+      position: relative;
+      background: #48abff;
+      color:#fff;
+      dl{
+        width:100%;
+        font-size: 16px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+      }
+      dt{
+        margin-bottom:24px;
+      }
+    }
+  }
+}
+
+.contact{
+  float: left;
+  text-align: left;
+  b{
+    font-size: 16px;
+    color:#333;
+  }
+  p:first-of-type{
+    color:#48abff;
+    margin-bottom:22px;
+  }
+  p:last-of-type{
+    margin-top:46px;
+  }
+}
+
+form{
+  // clear:left;
+  width:544px;
+  float:right;
+  input{
+    // display: block;
+    width:100%;
+    height:40px;
+    outline:none;
+    padding:10px 20px 10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    &:nth-of-type(2){
+      margin:10px 0;
+    }
+  }
+  [contenteditable="true"]{
+    margin-bottom:30px;
+    height:100px;
+    outline:none;
+    padding:10px 20px 10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    text-align: left;
+    &:empty:not(:focus):before{
+      content:attr(data-text);
+      color:#999;
+    }
+  }
+  // 设置placeholder的颜色
+  ::-webkit-input-placeholder{
+    color:#999;
+  }
+  :-ms-input-placeholder{
+    color:#999;
+  }
+  ::-moz-placeholder{
+    color:#999;
+  }
+  :-moz-placeholder{
+    color:#999;
+  }
+}
