@@ -1,0 +1,195 @@
+#banner{
+  width:100%;
+  height:400px;
+  margin-bottom:50px;
+}
+// 主要板块标题样式
+.heading{
+  text-align: center;
+  >p:first-of-type{
+    font-size: 16px;
+    color:#333;
+    margin:0;
+    >span{
+      display: block;
+      font-size: 12px;
+      color:#999;
+      margin:10px 0 30px 0;
+    }
+  }
+}
+main{
+  width:1200px;
+  margin:0 auto 50px;
+  position: relative;
+  aside{
+    position: absolute;
+    top:-80px;
+    width:200px;
+    >dl{
+      width:200px;
+      height:100px;
+      background: #48abff;
+      color:#fff;
+      position: relative;
+      dt{
+        position: absolute;
+        top:50%;
+        right:40px;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 5px;
+        transform: translateY(-100%);
+      }
+      dd:first-of-type{
+        margin:0;
+        height:100px;
+        line-height: 100px;
+        &:first-letter{
+          text-transform: capitalize;
+          font-size: 40px;
+        }
+      }
+      dd:last-of-type{
+        position: absolute;
+        bottom:10px;
+        left:50%;
+        transform: translateX(-50%);
+      }
+    }
+    .accordion-container { 
+      margin-top:10px;
+      width: 200px; 
+      .accordion-category {
+        border-bottom:1px solid #fff;
+        position: relative;
+        background: #d6ecff;
+        .accordion-title {
+          text-align: left;
+          padding-left: 29px;
+          height: 40px;
+          line-height: 40px;
+          background: #a2d4ff;
+          position: relative;
+          display: block;
+          cursor: pointer;
+          &:hover {
+            background: #48abff;
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            width:0;
+            height:0;
+            border:5px solid transparent;
+            border-left:5px solid #48abff;
+            top: 15px;
+            left: 14px;
+          }
+        }    
+        .accordion-items {
+          max-height: 0;
+          height: 0;
+          margin: 0;
+          overflow: hidden;
+          transition: 0.6s ease-in;  
+          >li { 
+            position: relative;
+            padding-left:30px;
+            border-bottom:1px solid #fff;
+            &:before {
+              content: "";
+              position: absolute;
+              width:0;
+              height:0;
+              border:5px solid transparent;
+              border-left:5px solid #666;
+              top: 15px;
+              left:30px;
+            }
+            a{
+              text-align: left;
+              margin-left:15px;
+              display: block;
+              height:40px;
+              line-height: 40px;
+              color:#666;
+            }
+            // padding: 5px 20px; 
+            // &:first-child { padding-top: 10px }
+            // &:last-child { padding-bottom: 10px; }
+          }
+        }
+        input {
+          display: none;
+          &.active ~ .accordion-items,
+          &:checked ~ .accordion-items {
+            height: auto;
+            max-height: 900px;
+          }
+          &.active ~ .accordion-title,
+          &:checked ~ .accordion-title,
+          &:hover ~ .accordion-title { 
+            color:#fff; 
+            background: #48abff;
+            &:before {
+              content: "";
+              position: absolute;
+              width:0;
+              height:0;
+              border:5px solid transparent;
+              border-top:5px solid #fff;
+              top: 15px;
+              left: 14px;
+            }
+          }
+        }
+      }
+    }
+  } 
+  .list-items{
+    width:950px;
+    margin-left:250px;
+    ul{
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      li{
+        position: relative;
+        width:300px;
+        height:350px;
+        margin-bottom:25px;
+        border:1px solid #ccc;
+        &:hover{
+          border:1px solid #edc901;
+          dd>a{
+            background: #edc901;
+          }
+        }
+        dd{
+          width:100%;
+          position: absolute;
+          bottom:0;
+          a{
+            display: block;
+            width:200px;
+            height:30px;
+            line-height: 30px;
+            border-radius:15px;
+            background:#48abff;
+            color:#fff;
+            margin:20px auto 30px;
+          }
+        }
+      }
+    }
+  }
+  .pagination{
+    a{
+      color:#999;
+      // border:1px solid red;
+      padding:5px 10px;
+    }
+  }
+}

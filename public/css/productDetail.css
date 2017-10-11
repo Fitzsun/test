@@ -1,0 +1,151 @@
+#banner {
+  width: 100%;
+  height: 400px;
+}
+.heading {
+  text-align: center;
+}
+.heading > p:first-of-type {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+.heading > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+.detailContainer {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.detailContainer .proAppearance {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.detailContainer .proAppearance nav {
+  margin-top: 28px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.detailContainer .proAppearance nav > i {
+  margin-right: 10px;
+}
+.detailContainer .proAppearance .bread-crumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.detailContainer .proAppearance .bread-crumbs a {
+  color: #666;
+}
+.detailContainer .proAppearance .bread-crumbs a:hover {
+  color: #48abff;
+}
+.detailContainer .proAppearance .pictureShow {
+  margin-bottom: 146px;
+}
+.detailContainer .proAppearance .pictureShow > p {
+  font-size: 16px;
+  color: #333;
+  margin: 25px 0;
+}
+.detailContainer .proAppearance .right-form {
+  width: 400px;
+}
+.detailContainer .proAppearance .right-form > p:first-of-type {
+  margin: 36px 0 20px 0;
+}
+.detailContainer .proAppearance .right-form > p:last-of-type {
+  text-align: left;
+  line-height: 26px;
+  padding-left: 30px;
+  letter-spacing: 1px;
+}
+.detailContainer .proAppearance .right-form form {
+  padding-left: 30px;
+}
+.detailContainer .proAppearance .right-form form input {
+  margin-top: 10px;
+  outline: none;
+  width: 370px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 13px 0 13px 20px;
+  display: block;
+}
+.detailContainer .proAppearance .right-form form ::-webkit-input-placeholder {
+  color: #999;
+}
+.detailContainer .proAppearance .right-form form :-ms-input-placeholder {
+  color: #999;
+}
+.detailContainer .proAppearance .right-form form ::-moz-placeholder {
+  color: #999;
+}
+.detailContainer .proAppearance .right-form form :-moz-placeholder {
+  color: #999;
+}
+.detailContainer .proAppearance .right-form form button {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 52px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  margin: 50px auto 0;
+}
+.detailContainer .proAppearance .right-form form button > span {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.detailContainer .parameters .list-tabs {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.detailContainer .parameters .list-tabs li.active {
+  background: #48abff;
+}
+.detailContainer .parameters .list-tabs li.active a {
+  color: #fff;
+}
+.detailContainer .parameters .list-tabs li {
+  line-height: 30px;
+}
+.detailContainer .parameters .list-tabs li a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  color: #666;
+  font-size: 14px;
+}
+.detailContainer .parameters .line {
+  width: 100%;
+  height: 1px;
+  background: #48abff;
+}
+.detailContainer .parameters .tab-container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 1284px;
+  border: 1px solid red;
+}

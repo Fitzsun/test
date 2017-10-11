@@ -1,0 +1,150 @@
+#banner{
+  width:100%;
+  height:400px;
+}
+// 主要板块标题样式
+.heading{
+  text-align: center;
+  >p:first-of-type{
+    font-size: 16px;
+    color:#333;
+    margin:0;
+    >span{
+      display: block;
+      font-size: 12px;
+      color:#999;
+      margin:10px 0 30px 0;
+    }
+  }
+}
+.detailContainer{
+  width:100%;
+  margin-bottom:50px;
+  .proAppearance{
+    width:1200px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    nav{
+      margin-top:28px;
+      font-size: 16px;
+      >i{
+        margin-right:10px;
+      }
+      display: flex;
+    }
+    .bread-crumbs{
+      display: flex;
+      a{
+        color:#666;
+        &:hover{
+          color:#48abff;
+        }
+      }
+    }
+    .pictureShow{
+      margin-bottom:146px;
+      >p{
+        font-size: 16px;
+        color:#333;
+        margin:25px 0;
+      }
+    }
+    .right-form{
+      width:400px;
+      >p:first-of-type{
+        margin:36px 0 20px 0;
+      }
+      >p:last-of-type{
+        text-align: left;
+        line-height: 26px;
+        padding-left:30px;
+        letter-spacing: 1px;
+      }
+      form{
+        padding-left:30px;
+        input{
+          margin-top:10px;
+          outline: none;
+          width:370px;
+          height:40px;
+          border:1px solid #ccc;
+          border-radius:5px;
+          padding:13px 0 13px 20px;
+          display: block;
+        }
+        // 设置placeholder的颜色
+        ::-webkit-input-placeholder{
+          color:#999;
+        }
+        :-ms-input-placeholder{
+          color:#999;
+        }
+        ::-moz-placeholder{
+          color:#999;
+        }
+        :-moz-placeholder{
+          color:#999;
+        }
+        button{
+          position: relative;
+          display: inline-block;
+          width:300px;
+          height:52px;
+          border:none;
+          outline: none;
+          cursor:pointer;
+          color:#fff;
+          font-size: 16px;
+          margin:50px auto 0;
+          >span{
+            position: absolute;
+            top:3px;
+            left:50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+  .parameters{
+    .list-tabs{
+      width:1200px;
+      margin:0 auto;
+      display: flex;
+      li.active{
+        background: #48abff;
+        a{
+          color:#fff;
+        }
+      }
+      li{
+        // &:hover{
+        //   background: #48abff;
+        //   a{
+        //     color:#fff;
+        //   }
+        // }
+        line-height: 30px;
+        a{
+          display: block;
+          width:100px;
+          height:30px;
+          color:#666;
+          font-size: 14px;
+        }
+      }
+    }
+    .line{
+      width:100%;
+      height:1px;
+      background: #48abff;
+    }
+    .tab-container{
+      width:1200px;
+      margin:0 auto;
+      height:1284px;
+      border:1px solid red;
+    }
+  }
+}

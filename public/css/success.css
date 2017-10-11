@@ -1,0 +1,116 @@
+#banner {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 50px;
+}
+.heading {
+  text-align: center;
+}
+.heading > p:first-of-type {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+.heading > p:first-of-type > span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0 30px 0;
+}
+section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+section > .wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+section > .wrapper .list-tabs {
+  margin-bottom: 50px;
+  text-align: center;
+}
+section > .wrapper .list-tabs .active a {
+  color: #58abff;
+  border-bottom: 1px solid #58abff;
+}
+section > .wrapper .list-tabs .active i {
+  display: block;
+}
+section > .wrapper .list-tabs li {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+section > .wrapper .list-tabs li i {
+  display: none;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #58abff;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+          transform: translate(-50%, -50%) rotateZ(45deg);
+}
+section > .wrapper .list-tabs li a {
+  font-size: 16px;
+  display: block;
+  color: #666;
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+}
+section > .wrapper .tab-content {
+  min-height: 300px;
+}
+section > .wrapper .list-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1030px;
+  margin: 0 auto 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+section > .wrapper .list-items li {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  height: 220px;
+}
+section > .wrapper .list-items li > div {
+  width: 294px;
+  height: 100%;
+}
+section > .wrapper .list-items li > dl {
+  text-align: left;
+  width: 206px;
+  height: 100%;
+  padding: 20px 20px 0 14px;
+  background: #e5f3ff;
+}
+section > .wrapper .list-items li > dl dt {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+section > .wrapper .list-items li > dl dd {
+  color: #999;
+  margin-top: 10px;
+}
+section > .wrapper .list-items li > dl dd:last-of-type span {
+  float: left;
+}
+section > .wrapper .list-items li > dl dd:last-of-type p {
+  line-height: 24px;
+  margin: 0 0 0 70px;
+}
+section > .wrapper .pagination a {
+  color: #999;
+  padding: 5px 10px;
+}

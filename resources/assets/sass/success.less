@@ -1,0 +1,117 @@
+#banner{
+  width:100%;
+  height:400px;
+  margin-bottom:50px;
+}
+// 主要板块标题样式
+.heading{
+  text-align: center;
+  >p:first-of-type{
+    font-size: 16px;
+    color:#333;
+    margin:0;
+    >span{
+      display: block;
+      font-size: 12px;
+      color:#999;
+      margin:10px 0 30px 0;
+    }
+  }
+}
+
+section{
+  width:100%;
+  >.wrapper{
+    width:1200px;
+    margin:0 auto;
+    .list-tabs{
+      margin-bottom:50px;
+      text-align: center;
+      .active{
+        a{
+          color:#58abff;
+          border-bottom: 1px solid #58abff;
+        }
+        i{
+          display: block;
+        }
+      }
+      li{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        i{
+          display: none;
+          position: absolute;
+          width:5px;
+          height:5px;
+          background:#58abff;
+          top:100%;
+          left:50%;
+          transform: translate(-50%,-50%) rotateZ(45deg);
+        }
+        a{
+          font-size: 16px;
+          display:block;
+          color:#666;
+          width:100px;
+          padding:10px;
+          border-bottom:1px solid transparent;
+        }
+      }
+    }
+    .tab-content{
+      min-height:300px;
+    }
+    .list-items{
+      display: flex;
+      width:1030px;
+      margin:0 auto 50px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      li{
+        margin-bottom:30px;
+        display: flex;
+        width:500px;
+        height:220px;
+        >div{
+          width:294px;
+          height:100%;
+        }
+        >dl{
+          text-align: left;
+          width:206px;
+          height:100%;
+          padding:20px 20px 0 14px;
+          background:#e5f3ff;
+          dt{
+            font-weight: bold;
+            font-size: 16px;
+            color:#333;
+          }
+          dd{
+            color:#999;
+            margin-top:10px;
+            &:last-of-type{
+              span{
+                float:left;
+              }
+              p{
+                line-height: 24px;
+                margin:0 0 0 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .pagination{
+      a{
+        color:#999;
+        // border:1px solid red;
+        padding:5px 10px;
+      }
+    }
+  }
+  margin-bottom:50px;
+}

@@ -19,7 +19,20 @@
 </header>
 <nav id="navbar">
   <ul>
-    <li>
+    @foreach($categories as $key=>$li)
+      @if($li->parent_id ===0)
+      <li>
+        <a href="{{ $li->path }}">{{ $li->name }}
+        </a>
+        <ul>
+          @foreach($li->allChildrenCategories as $li2)
+            <li><a href="{{ $li2->path }}">{{ $li2->name }}</a></li>
+          @endforeach
+        </ul>
+      </li>
+      @endif
+    @endforeach
+    {{--  <li>
       <a href="/index">首页</a>
     </li>
     <li>
@@ -53,6 +66,6 @@
         <li><a href="#">服务团队</a></li>
         <li><a href="#">联系我们</a></li>
       </ul>
-    </li>
+    </li>  --}}
   </ul>
 </nav>

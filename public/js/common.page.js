@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 49);
+/******/ 	return __webpack_require__(__webpack_require__.s = 50);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(50);
+module.exports = __webpack_require__(51);
 
 
 /***/ }),
 
-/***/ 50:
+/***/ 51:
 /***/ (function(module, exports) {
 
 // // require('bootstrap/dist/css/bootstrap.min.css');
@@ -140,23 +140,41 @@ $(document).ready(function () {
 
   // 公用的头和尾是ajax请求得到的,请求一次并缓存下来
   // 友情链接部分
-  $.ajax({
-    type: 'get',
-    url: '/ajax/links',
-    cache: true,
-    success: function success(data) {
-      console.log(data);
-      var html = '';
-      // for循环竟然写错了,最后为i++
-      for (var i = 0; i < data.length; i++) {
-        var obj = data[i];
-        // 拼接字符串也写错了,只写li就行
-        html += '\n            <li><a href="' + obj['link_href'] + '" rel="nofollow">' + obj['link_name'] + '</a></li>\n          ';
-      }
-      // 循环结束保存数据
-      console.log(html);
-      $('.friendly-link>.clearfix').html(html);
-    }
+  // $.ajax({
+  //   type: 'get',
+  //   url: '/ajax/links',
+  //   cache: true,
+  //   success: function(data) {
+  //     console.log(data);
+  //     var html = '';
+  //     // for循环竟然写错了,最后为i++
+  //     for (var i = 0; i < data.length; i++) {
+  //       var obj = data[i];
+  //       // 拼接字符串也写错了,只写li就行
+  //       html += `
+  //         <li><a href="${obj['link_href']}" rel="nofollow">${obj['link_name']}</a></li>
+  //       `;
+  //     }
+  //     // 循环结束保存数据
+  //     console.log(html);
+  //     $('.friendly-link>.clearfix').html(html);
+  //   },
+  // });
+
+  // 标签页切换效果
+  $('.tab-content').hide();
+  $('.list-tabs li:first').addClass('active');
+  $('.tab-content:first').show();
+
+  // event click
+  $('.list-tabs li').click(function () {
+    $('.list-tabs li').removeClass('active');
+    $(this).addClass('active');
+    // var index = $(this).index();
+    $('.tab-content').hide();
+    var activeTab = $(this).find('a').attr('href');
+    $(activeTab).fadeIn();
+    return false;
   });
 });
 

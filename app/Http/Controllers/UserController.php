@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Links;
+use App\ProductNav;
 use Illuminate\Http\Request;
 // 在view.php中配置前端页面的目录位置
 // 使其识别html php结尾的文件 
@@ -35,7 +36,7 @@ class UserController extends Controller
         return view('newsCenter.page');
     }
 
-    public function newsCenterDetail()
+    public function newsDetail()
     {
         return view('newsCenterDetail.page');
     }
@@ -47,10 +48,11 @@ class UserController extends Controller
 
     public function product()
     {
-        return view('productCenter.page');
+        $navs =ProductNav::with('allChildrenNavs')->get();
+        return view('productCenter.page',compact('navs'));
     }
 
-    public function productCenterDetail()
+    public function productDetail()
     {
         return view('productCenterDetail.page');
     }

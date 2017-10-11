@@ -3,11 +3,18 @@
     "/css/app.css": "/css/app.css",
     "/css/base.css": "/css/base.css",
     "/css/about.css": "/css/about.css",
+    "/css/airTest.css": "/css/airTest.css",
+    "/css/news.css": "/css/news.css",
+    "/css/newsDetail.css": "/css/newsDetail.css",
+    "/css/newSys.css": "/css/newSys.css",
+    "/css/productDetail.css": "/css/productDetail.css",
+    "/css/product.css": "/css/product.css",
+    "/css/success.css": "/css/success.css",
+    "/css/treatment.css": "/css/treatment.css",
     "/css/index.css": "/css/index.css",
     "/static/js/html5shiv.min.js": "/static/js/html5shiv.min.js",
-    "/static/js/jquery.js": "/static/js/jquery.js",
     "/static/js/respond.min.js": "/static/js/respond.min.js",
-    "/static/js/cssslidy.js": "/static/js/cssslidy.js",
     "/js/index.js": "/js/index.js",
-    "/js/common.page.js": "/js/common.page.js"
+    "/js/common.page.js": "/js/common.page.js",
+    "/js/switch.js": "/js/switch.js"
 }

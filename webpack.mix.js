@@ -21,15 +21,23 @@ mix.webpackConfig({
 // webpack.mix.js 是所有资源编译的入口，可以将其看作 Webpack 的轻量级配置封装层。
 // Mix 任务可以以方法链的方式被链在一起来定义前端资源如何被编译。
 mix.js('resources/assets/js/app.js', 'public/js')
-   .js('node_modules/jquery/dist/jquery.js', 'public/static/js')
-   .js('resources/assets/js/vendor/cssslidy.js', 'public/static/js')
+  //  .js('resources/assets/js/vendor/cssslidy.js', 'public/static/js')
    .js('resources/assets/js/index.js', 'public/js')
+   .js('resources/assets/js/switch.js', 'public/js')
    .js('resources/assets/js/common.page.js', 'public/js')
    .js('resources/assets/js/vendor/html5shiv.min.js', 'public/static/js')
    .js('resources/assets/js/vendor/respond.min.js', 'public/static/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .less('resources/assets/sass/base.less','public/css')
    .less('resources/assets/sass/about.less','public/css')
+   .less('resources/assets/sass/airTest.less','public/css')
+   .less('resources/assets/sass/news.less','public/css')
+   .less('resources/assets/sass/newsDetail.less','public/css')
+   .less('resources/assets/sass/newSys.less','public/css')
+   .less('resources/assets/sass/productDetail.less','public/css')
+   .less('resources/assets/sass/product.less','public/css')
+   .less('resources/assets/sass/success.less','public/css')
+   .less('resources/assets/sass/treatment.less','public/css')
    .less('resources/assets/sass/index.less','public/css');
 
 

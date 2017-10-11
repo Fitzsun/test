@@ -1,0 +1,161 @@
+#banner{
+  width:100%;
+  height:400px;
+  margin-bottom:50px;
+}
+#main{
+  width:100%;
+  main{
+    width:100%;
+    margin:0 auto;
+  }
+}
+.list-tabs{
+  padding-bottom:70px;
+  width:1200px;
+  margin: 0 auto;
+  // display: table-cell;
+  text-align: center;
+  .active{
+    a{
+      color:#58abff;
+      border-bottom: 1px solid #58abff;
+      &:after{
+        content:"";
+        display: block;
+        position: absolute;
+        width:5px;
+        height:5px;
+        background:#58abff;
+        top:100%;
+        left:50%;
+        transform: translate(-50%,-50%) rotateZ(45deg);
+      }
+    }
+  }
+  li{
+    display: inline-block;
+    a{
+      position: relative;
+      display:block;
+      color:#000;
+      width:100px;
+      padding:10px;
+      border-bottom:1px solid transparent;
+    }
+  }
+}
+.top{
+  color:#000;
+  width:1200px;
+  margin:0 auto;
+  height:339px;
+  >div{
+    color:#666;
+    width:840px;
+    line-height: 25px;
+    p:nth-of-type(2){
+      margin:44px 0 20px 0;
+    }
+  }
+  margin-bottom:70px;
+}
+.around{
+  height:690px;
+  width:100%;
+  margin-bottom: 110px;
+  .textAround{
+    width:1200px;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+    >p{
+      color:#666;
+      letter-spacing: 1px;
+      position: absolute;
+      &:first-of-type{
+        top:50px;
+        left:380px;
+      }
+      &:nth-of-type(2){
+        top:150px;
+        left:888px;
+      }
+      &:nth-of-type(3){
+        top:220px;
+        left:80px;
+      }
+      &:nth-of-type(4){
+        top:430px;
+        left:888px;
+      }
+      &:nth-of-type(5){
+        top:480px;
+        left:100px;
+        color:#58abff;
+      }
+      &:last-of-type{
+        top:600px;
+        left:740px;
+      }
+    }
+  }
+}
+.process{
+  width:100%;
+  margin-bottom:50px;
+  >div{
+    width:1200px;
+    margin:0 auto;
+    >p{
+      font-size: 16px;
+      text-align: center;
+      color:#58abff;
+      margin-bottom: 34px;
+    }
+    .textProcess{
+      height:546px;
+      width:100%;
+      color:#666;
+      position: relative;
+      >dl{
+        position: absolute;
+        &:first-of-type{
+          width:200px;
+          top:0;
+          left:38%;
+        }
+        &:nth-of-type(2){
+          width:210px;
+          top:28%;
+          left:12%;
+        }
+        &:nth-of-type(3){
+          width:260px;
+          top:25%;
+          right:10%;
+        }
+        &:nth-of-type(4){
+          width:220px;
+          bottom:15%;
+          left:15%;
+        }
+        &:last-of-type{
+          width:270px;
+          bottom:20%;
+          right:10%;
+        }
+      }
+      >p{
+        width:100%;
+        color:#fff;
+        text-align: center;
+        position: absolute;
+        bottom:0;
+      }
+    }
+  }
+}
+.tab-content{
+  min-height:300px;
+}

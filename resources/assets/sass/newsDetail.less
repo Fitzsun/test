@@ -1,0 +1,100 @@
+#banner{
+  width:100%;
+  height:400px;
+  margin-bottom:20px;
+}
+// 主要板块标题样式
+.heading{
+  text-align: center;
+  >p:first-of-type{
+    font-size: 16px;
+    color:#333;
+    margin:0;
+    >span{
+      display: block;
+      font-size: 12px;
+      color:#999;
+      margin:10px 0 30px 0;
+    }
+  }
+}
+main{
+  width:1200px;
+  margin:0 auto 50px;
+  position: relative;
+  .content{
+    width:800px;
+    >p{
+      margin:20px 0;
+    }
+  }
+  .bread-crumbs{
+    text-align: left;
+    height:22px;
+    line-height: 22px;
+    i{
+      display: inline-block;
+      width:15px;
+      height:22px;
+    }
+    a{
+      display: inline-block;
+      color:#666;
+    }
+  }
+  h3{
+    margin:50px auto 36px;
+    // 这个改怎么定位,标题长度又不是定宽的...
+    span{
+      display: block;
+      color:#666;
+      font-weight: normal;
+      margin-top:16px;
+    }
+  }
+  p{
+    text-align: left;
+  }
+
+}
+.aside{
+  position: absolute;
+  left:830px;
+  top:15px;
+}
+.news-list{
+  text-align: left;
+  &:nth-of-type(2){
+    margin-top:68px;
+  }
+  dt{
+    // border:1px solid red;
+    font-weight: 900;
+    display: flex;
+    align-content: space-around;
+    span{
+      padding-left:10px;
+      height:30px;
+      line-height: 30px;
+    }
+  }
+  dd{
+    margin:10px 0;
+    padding-left:12px;
+    i{
+      display: inline-block;
+      width:7px;
+      height:12px;
+      margin-right:5px;
+    }
+    a{
+      color:#666;
+      &:hover{
+        color:#48abff;
+      }
+    }
+  }
+}
+.aside-logo{
+  margin:130px 0 50px 0;
+}

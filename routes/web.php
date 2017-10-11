@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index.page');
 });
 
 Auth::routes();
@@ -26,9 +26,9 @@ Route::group(['prefix' => 'dashboard'], function () {
 });
 
 // 使用路由群组,使用路由前缀,专门用来处理ajax请求,返回公用的头和尾
-Route::group(['prefix' => 'ajax'], function () {
-    Route::get('/links','AjaxController@links');
-});
+// Route::group(['prefix' => 'ajax'], function () {
+//     Route::get('/links','AjaxController@links');
+// });
 
 
 
@@ -36,10 +36,10 @@ Route::get('/index', 'UserController@index');
 Route::get('/about', 'UserController@about');
 Route::get('/airTest', 'UserController@airTest');
 Route::get('/news', 'UserController@news');
-Route::get('/newsCenterDetail', 'UserController@newsCenterDetail');
+Route::get('/newsDetail', 'UserController@newsDetail');
 Route::get('/newSys', 'UserController@newSys');
 Route::get('/product', 'UserController@product');
-Route::get('/productCenterDetail', 'UserController@productCenterDetail');
+Route::get('/productDetail', 'UserController@productDetail');
 Route::get('/success', 'UserController@success');
 Route::get('/treatment', 'UserController@treatment');
 

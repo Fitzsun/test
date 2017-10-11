@@ -54,11 +54,15 @@
     @include('particals.footer')
     
   @section('scripts')
-    <script src="{{ asset('static/js/jquery.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    {{--  <script src="{{ asset('static/cssslidy.js') }}"></script>  --}}
 
     <script src="{{ asset('js/common.page.js') }}"></script>
+
   @show
   
-  {{--  @yield('scripts')  --}}
+  @yield('scripts')
   </body>
 </html>

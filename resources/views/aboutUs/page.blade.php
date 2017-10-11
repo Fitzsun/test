@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+  关于我们
+@endsection
+
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 @endsection
@@ -16,7 +20,7 @@
     <main>
       <div class="list-tabs clearfix">
         <input type="radio" name="tab" id="tab1" checked>
-        <label for="tab1">公司简介</label>
+        <label for="tab1"><a id="company">公司简介</a></label>
 
         <input type="radio" name="tab" id="tab2">
         <label for="tab2">企业文化</label>

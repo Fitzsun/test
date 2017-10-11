@@ -281,7 +281,4 @@
 @section('scripts')
   @parent
   <script src="{{ asset('js/index.js') }}"></script>
-  <script>
-    cssSlidy();
-  </script>
 @endsection

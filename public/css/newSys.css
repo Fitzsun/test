@@ -1,0 +1,174 @@
+#banner {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 96px;
+}
+#main {
+  width: 100%;
+}
+#main main {
+  width: 1200px;
+  margin: 0 auto;
+}
+#main main .list-icons {
+  margin-bottom: 50px;
+}
+#main main .list-icons li {
+  text-align: center;
+  float: left;
+  width: 300px;
+}
+#main main .list-icons li dl dd:first-of-type {
+  width: 58px;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 auto;
+}
+#main main .list-icons li dl dd:first-of-type img {
+  vertical-align: middle;
+}
+#main main .list-icons li dl dd:nth-of-type(2) {
+  margin: 14px 0 10px 0;
+  color: #999;
+}
+#main main .list-icons li dl dd:last-of-type {
+  color: #666;
+}
+#main main .newAir .list-tabs {
+  margin-bottom: 50px;
+  text-align: center;
+}
+#main main .newAir .list-tabs .active a {
+  color: #58abff;
+  border-bottom: 1px solid #58abff;
+}
+#main main .newAir .list-tabs .active a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #58abff;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+          transform: translate(-50%, -50%) rotateZ(45deg);
+}
+#main main .newAir .list-tabs li {
+  display: inline-block;
+  text-align: center;
+}
+#main main .newAir .list-tabs li a {
+  position: relative;
+  display: block;
+  color: #666;
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+}
+#main main .newAir .tab-content {
+  min-height: 712px;
+}
+#main main .newAir .list-items {
+  width: 1200px;
+  height: 712px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+#main main .newAir .list-items > li {
+  width: 290px;
+  height: 350px;
+  border: 1px solid #ccc;
+}
+#main main .newAir .list-items > li dl dd:first-of-type {
+  height: 260px;
+  line-height: 260px;
+  overflow: hidden;
+}
+#main main .newAir .list-items > li dl dd:first-of-type img {
+  vertical-align: middle;
+}
+#main main .newAir .list-items > li dl dt {
+  text-align: center;
+  color: #666;
+}
+#main main .newAir .list-items > li dl dd:last-of-type {
+  margin: 20px 0;
+}
+#main main .newAir .list-items > li dl dd:last-of-type a {
+  display: block;
+  color: #fff;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: #48abff;
+  text-align: center;
+}
+#main main .newAir .list-items > li:hover {
+  border: 1px solid #edc901;
+}
+#main main .newAir .list-items > li:hover dl > dd > a {
+  background: #edc901;
+}
+#main main .newAir > P {
+  text-align: center;
+  margin: 30px 0 50px 0;
+}
+#main main .newAir > P a {
+  color: #666;
+}
+#main .chooseReason {
+  margin-bottom: 50px;
+}
+#main .chooseReason > p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#main .chooseReason .fog {
+  width: 100%;
+  height: 401px;
+  position: relative;
+}
+#main .chooseReason .fog p {
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 598px;
+  line-height: 28px;
+  color: #666;
+  text-align: center;
+}
+#main .love .loveWho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 60px;
+}
+#main .love .loveWho li:nth-of-type(2) {
+  margin-top: 44px;
+}
+#main .love .loveWho li:nth-of-type(4) {
+  margin-top: 44px;
+}
+#main .love > p {
+  margin: 0 auto 50px;
+  height: 106px;
+  line-height: 106px;
+}
