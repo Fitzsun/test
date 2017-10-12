@@ -244,6 +244,8 @@
 #bottom main .successful-cases .list-items li dl dt {
   font-weight: bold;
   margin: 16px 0 30px 0;
+  height: 19px;
+  overflow: hidden;
 }
 #bottom main .successful-cases .list-items li dl dd {
   font-size: 14px;
@@ -257,6 +259,8 @@
 #bottom main .successful-cases .list-items li dl dd:last-of-type > p {
   position: absolute;
   margin: 0 0 0 70px;
+  max-height: 88px;
+  overflow: hidden;
   top: 0;
 }
 #bottom main .successful-cases .list-items li span {

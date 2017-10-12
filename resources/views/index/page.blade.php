@@ -99,8 +99,8 @@
         </ul>
       </div>
       <div class="company-desc">
-        <p>公司简介<span>Company profile of Huaxiajunan</span></p>
-        <p>北京华夏君安科技有限公司，是一家从2010年起专业从事室内空气治理服务单位，是国内最早开发和拓展改领域的先驱者之一，华夏君安紧跟时代需要，为室内空气质量贡献自己微薄的力量。我们一直在努力！</p>
+        <p>{{ $desc->name }}<span>{{ $desc->en_name }}</span></p>
+        <p>{{ $desc->description  }}</p>
       </div>
     </main>
   </section>
@@ -108,69 +108,24 @@
   <section id="bottom">
     <main>
       <div class="successful-cases">
-        <p>成功案例<span>Successful cases of Huaxiajunan</span></p>
+        <p>{{ $success->name }}<span>{{ $success->en_name}}</span></p>
         <div class="list-items">
           <ul class="clearfix">
+            @foreach($successList as $li)
             <li>
               <div>
-                <img src="/static/images/case1.jpg" alt="">
+                <img src="{{ $li->sm_image_url }}" alt="">
               </div>
               <dl>
-                <dt>融恒嘉汇空气治理</dt>
-                <dd>服务时间：2016.05.08</dd>
-                <dd>建筑面积：5000平方米</dd>
-                <dd>服务内容：<p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标准</p></dd>
+                <dt>{{ $li->title }}</dt>
+                <dd>服务时间：{{ $li->serve_time }}</dd>
+                <dd>建筑面积：{{ $li->area }}</dd>
+                <dd>服务内容：<p>{{ $li->serve_content }}</p></dd>
               </dl>
               <span></span>
             </li>
-            <li>
-              <div>
-                <img src="/static/images/case2.jpg" alt="">
-              </div>
-              <dl>
-                <dt>融恒嘉汇空气治理</dt>
-                <dd>服务时间：2016.05.08</dd>
-                <dd>建筑面积：5000平方米</dd>
-                <dd>服务内容：<p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标准</p></dd>
-              </dl>
-              <span></span>
-            </li>
-            <li>
-              <div>
-                <img src="/static/images/case3.jpg" alt="">
-              </div>
-              <dl>
-                <dt>融恒嘉汇空气治理</dt>
-                <dd>服务时间：2016.05.08</dd>
-                <dd>建筑面积：5000平方米</dd>
-                <dd>服务内容：<p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标准</p></dd>
-              </dl>
-              <span></span>
-            </li>
-            <li>
-              <div>
-                <img src="/static/images/case4.jpg" alt="">
-              </div>
-              <dl>
-                <dt>融恒嘉汇空气治理</dt>
-                <dd>服务时间：2016.05.08</dd>
-                <dd>建筑面积：5000平方米</dd>
-                <dd>服务内容：<p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标准</p></dd>
-              </dl>
-              <span></span>
-            </li>
-            <li>
-              <div>
-                <img src="/static/images/case5.jpg" alt="">
-              </div>
-              <dl>
-                <dt>融恒嘉汇空气治理</dt>
-                <dd>服务时间：2016.05.08</dd>
-                <dd>建筑面积：5000平方米</dd>
-                <dd>服务内容：<p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标准</p></dd>
-              </dl>
-              <span></span>
-            </li>
+            @endforeach
+ 
           </ul>
           <a href="#">查看更多</a>
         </div>

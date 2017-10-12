@@ -1,8 +1,9 @@
 <?php
 
-use Faker\Generator as Faker;
+// use Faker\Generator as Faker;
 
-$factory->define(App\News::class, function (Faker $faker) {
+$factory->define(App\News::class, function () {
+    $faker = Faker\Factory::create('zh_CN');
     return [
         //
     ];

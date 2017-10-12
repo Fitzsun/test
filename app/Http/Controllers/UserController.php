@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Links;
+use App\Success;
+use App\Category;
 use App\ProductNav;
 use Illuminate\Http\Request;
 // 在view.php中配置前端页面的目录位置
@@ -13,8 +15,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        
-        return view('index.page');
+        // get()获取的是一个集合 [{"id":8,"parent_id":0,"name":"\u6210\u529f\u6848\u4f8b","en_name":"success","path":"\/success","description":"desc","image_url":"","created_at":"2017-10-11 07:47:26","updated_at":"2017-10-11 07:47:26"}]
+        $success = Category::where('name', '=', '成功案例')->first();
+        $desc = Category::where('name','=','公司简介')->first();
+        $successList = Success::take(5)->get();
+        return view('index.page',compact('success','desc','successList'));
     }
 
     public function about()
