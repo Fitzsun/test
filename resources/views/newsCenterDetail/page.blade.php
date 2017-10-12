@@ -5,7 +5,7 @@
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ asset('css/newsCenter.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/newsDetail.css') }}">
 @endsection
 
 @section('content')

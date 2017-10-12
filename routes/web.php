@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index.page');
-});
+// 这是一个bug吗? 写成下边这样会出现Undefined variable: desc错误,变量没有赋值给模板
+// Route::get('/', function () {
+//     return view('index.page');
+// });
+
+// 这样就行了
+Route::get('/', 'UserController@index');
+
+
 
 Auth::routes();
 

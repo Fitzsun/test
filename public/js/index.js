@@ -213,7 +213,7 @@ $(document).ready(function () {
         CS.animationString = 'animation';
         CS.hasAnimation = false;
         CS.keyframeprefix = '';
-        CS.domPrefixes = 'Webkit Moz O Khtml ms'.split(' ');
+        CS.domPrefixes = 'Webkit Moz O Khtml'.split(' ');
         CS.pfx = '';
         CS.element = document.getElementById(options.slidySelector.replace('#', ''));
         CS.init = function () {
@@ -354,6 +354,7 @@ $(document).ready(function () {
             }
         }();
     };
+
     cssSlidy();
 });
 

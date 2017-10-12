@@ -132,7 +132,7 @@ $(document).ready(function(){
     CS.animationString = 'animation';
     CS.hasAnimation = false;
     CS.keyframeprefix = '';
-    CS.domPrefixes = 'Webkit Moz O Khtml ms'.split(' ');
+    CS.domPrefixes = 'Webkit Moz O Khtml'.split(' ');
     CS.pfx = '';
     CS.element = document.getElementById(options.slidySelector.replace('#', ''));
     CS.init = (function() {
@@ -164,8 +164,8 @@ $(document).ready(function(){
                 caption = who.getAttribute(options.captionSource); }
                 who.parentNode.insertBefore(temp, who);
                 if (options.captionSource == "alt" || options.captionSource == "data-caption") {
-                    if (caption !== null) {
-                        content = document.createElement('figcaption');
+                 if (caption !== null) {
+                     content = document.createElement('figcaption');
                     content.innerHTML = caption;
                     // places captions in each <figure> element, if required
                     }
@@ -252,7 +252,7 @@ $(document).ready(function(){
             } else {
                 css.innerHTML += "left: 0%; "
             }
-    
+
             css.innerHTML += keyframeprefix + "transform: translate3d(0,0,0); " + keyframeprefix + "animation: " + totalTime + "s " + options.cssAnimationName + " infinite; }\n"; // call on the completed keyframe animation sequence
             // place css style tag
             if (options.cssLocation !== undefined) options.cssLocation.appendChild(css);
@@ -262,6 +262,7 @@ $(document).ready(function(){
             options.fallbackFunction();
         }
     })();
-  }
+}
+
   cssSlidy();
 });

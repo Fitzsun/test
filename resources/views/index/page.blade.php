@@ -200,9 +200,9 @@
         <div class="clearfix">
             <div id="slidy-container"> 
               <figure id="slidy"> 
-                <a href='#' target='_blank'><img src="/static/images/newsCarousel1.jpg" alt="jQuery仿淘宝商品多属性查询" data-caption="jQuery仿淘宝商品多属性查询"></a> 
-                <a href='#' target='_blank'><img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"></a> 
-                <a href='#' target='_blank'><img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor"></a> 
+                <img src="/static/images/newsCarousel1.jpg" alt="jQuery仿淘宝商品多属性查询" data-caption="jQuery仿淘宝商品多属性查询">
+                <img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"> 
+                <img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor">
               </figure> 
             </div> 
           <!-- </div> -->

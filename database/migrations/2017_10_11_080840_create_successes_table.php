@@ -14,11 +14,13 @@ class CreateSuccessesTable extends Migration
     public function up()
     {
         Schema::create('successes', function (Blueprint $table) {
-            // 新闻自增ID
+            // 案例自增ID
             $table->increments('id');
-            // 新闻列表图片
+            // 案例所属类别
+            $table->integer('category_id');
+            // 案例列表图片
             $table->string('sm_image_url');
-            // 新闻标题 string('title',50)后可以跟数值限制长度,先放着
+            // 案例标题 string('title',50)后可以跟数值限制长度,先放着
             $table->string('title');
             // 服务时间   用什么格式呢?
             $table->timestamp('serve_time');

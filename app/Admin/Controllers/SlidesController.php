@@ -93,13 +93,18 @@ class SlidesController extends Controller
 
             $form->display('id', 'ID');
             // 添加text类型的input框
-            $form->text('title', '幻灯名称');
+            $form->text('slide_name', '幻灯名称');
+            $form->text('level', '排序');
             // $form->file('title', '幻灯图片');
             // $form->image('slide_name','幻灯图片');
-            $form->image('imgUrl','文件路径')->name(function ($file) {
+            $form->image('imgUrl','选择图片')->name(function ($file) {
                 return 'test.'.$file->guessExtension();
+            })->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
             });
-            
+
+            // resize用来调整大小  接一个函数进行约束
+
             // 修改图片上传路径和文件名
             // $form->image('imgUrl', '文件路径')->move('public', 'image2');
             
@@ -110,7 +115,7 @@ class SlidesController extends Controller
             // $form->image('title','添加水印')->insert('hello world', 'center');
             // $form->image($column[, $label])->removable();
             // $form->text('href', '链接地址');
-            $form->text('level', '排序');
+            
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });

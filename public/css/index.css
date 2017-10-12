@@ -413,10 +413,14 @@
 #bottom main .news #slidy-container {
   float: left;
   width: 580px;
+  height: 300px;
   overflow: hidden;
 }
 #bottom main .news #slidy-container a {
   display: block;
+}
+#bottom main .news #slidy-container #slidy {
+  width: 100%;
 }
 #bottom main .news .list-news {
   text-align: left;
