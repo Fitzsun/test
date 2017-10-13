@@ -1,0 +1,219 @@
+#创建填充文件
+     php artisan make:seeder ContactTableSeeder
+#避免找不到类的错误
+     composer dump-autoload(app目录被composer注册为psr-4自动加载,database采用的是psr-0 classmap方式加载)
+#执行填充命令
+     php artisan db:seed(所有的都会被填充)
+     php artisan db:seed --class[=CLASS]
+#执行数据表的迁移命令
+     php artisan migrate (采用类似git版本库的方式,只有改变的才会被重新迁移)
+#创建模型
+     php artisan make:model modelName -a  (-a参数表示同时创建对应的migration,controller和factory文件)
+     modelName为单数,但是migration中创建的表为复数
+#vsc多行注释快捷键
+     ctrl+shift+/ 
+#laravel辅助函数
+     url()  asset()  mix() ...
+#laravel向blade传递变量
+     return view("layouts.app")->with("title",$title);
+     return view("layouts.app",["title"=>$title]);
+     return view("layouts.app",compact("title"));
+#yarn包管理工具更新所有的依赖
+     yarn upgrade --latest
+     yarn upgrade-interactive
+#npm
+     npm -g(全局安装) install less --save-dev
+
+
+#npm 与 yarn的区别
+
+     npm install  => yarn install
+     npm install --save [package] => yarn add [package]
+     npm install --save-dev [package] => yarn add [package] --dev
+     npm install --global [package] => yarn global add [package]
+     npm uninstall --save [package] => yarn remove [package]
+     npm uninstall --save-dev [package] => yarn remove [package]
+
+
+ npm install --save-dev less-loader less
+ The less-loader requires less as peerDependency. Thus you are able to control the versions accurately.
+
+#今天遇见的问题
+     less-loader@4.0.5" has incorrect peer dependency "less@^2.3.1".
+     less-loader@4.0.5 requires a peer of less@^2.3.1 but none was installed.
+     用npm安装能提示错误,用yarn安装快
+
+
+<!--[if lt IE 9]>
+      <script src="{{ asset('static/vendor/respond.min.js') }}"></script>
+  <![endif]-->
+
+
+<!--[if lt IE 10]>
+    <script src="/static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <script src="{{ asset('static/js/jquery.min.js') }}"></script>
+
+    
+    <script src="{{ asset('js/common.page.js') }}"></script>
+
+#webpack中同步加载和异步加载 (按需加载)
+
+#laravel中unsigned  用于整型?
+整型的每一种都分为：无符号（unsigned）和有符号（signed）两种类型（float和double总是带符号的），在默认情况下声明的整型变量都是有符号的类型（char有点特别），如果需声明无符号类型的话就需要在类型前加上unsigned。无符号版本和有符号版本的区别就是无符号类型能保存2倍于有符号类型的正整数数据，比如16位系统中一个short能存储的数据的范围为-32768~32767，而unsigned能存储的数据范围则是0~65535。由于在计算机中,整数是以补码形式存放的。根据最高位的不同，如果是1,有符号数的话就是负数；如果是无符号数,则都解释为正数。另外，unsigned若省略后一个关键字，大多数编译器都会认为是unsigned int。
+
+#laravel中时间戳
+    $table->timestamp('time')->default(\DB::raw('CURRENT_TIMESTAMP'));  
+#数据表中的自增ID默认从1开始,不是从0开始
+
+#laravel 中使用 use Carbon\Carbon; 'created_at'=>Carbon::now(),添加时间戳
+
+#laravel中@yield内有两个参数
+    <title>@yield('title',config('app.name'))</title>
+    子视图中有title时显示子视图中的,没有时默认使用全局配置中的title->app.name
+#html 单独显示&符号  使用&amp;
+
+
+# 清理缓存
+```
+ - php artisan cache:clear;
+ - php artisan config:clear;
+```
+ - php artisan config:cache
+
+#排版
+    在底部的内容使用max-height限制高度,超出部分使用 overflow:hidden
+
+#  sitemap  站点地图
+
+#文章的发表更新与维护
+   怎么让上传文章与前端的格式一致(富文本编辑器)
+#怎么获取用户登录的IP地址
+
+#MySQL创建库
+    create database blogmaster charset=utf8;
+
+#laravel
+    php artisan make:auth
+
+# laravel
+   php artisan migrate --seed
+
+2）读取配置的方法
+
+$value = config('app.timezone');
+即使用内置的config函数+配置文件名+配置参数名方式来读取配置的值
+
+ 
+
+3）设置配置的方法（只是在运行时（runtime）配置，不会写入到配置文件里）
+
+config(['app.timezone' => 'Asia/Shanghai']);
+PS：上面用了数组的省略写法
+
+ 
+
+4）缓存配置
+
+php artisan config:cache
+ 
+
+5）临时关闭网站
+
+php artisan down
+再打开
+
+php artisan up
+ 
+
+#laravel 开发需要配置  composer环境 
+#laravel 思想IOC(控制反转)  依赖注入是控制反转的一种实现方式
+
+
+#laravel导入百度富文本编辑器  网址: http://blog.csdn.net/wlzx120/article/details/77480662
+
+#intervention/image是为Laravel定制的图片处理工具
+
+#PHP如何开启GD库
+GD库是干什么用的呢！它是php处理图形的扩展库，GD库提供了一系列用来处理图片的API，使用GD库可以处理图片，或者生成图片。GD库在php中默认是没有开启的，如果想让它支持图片处理功能，那么就要手动开启GD库
+
+#laravel坑   Invalid argument supplied for foreach() 
+    造成这个错误的原因多数是因为论坛升级、编码转换造成的！composer update后造成的
+    if(is_array($extcredits)){ }  或者    @foreach((array)$dependencies as $dependency => $version)
+
+#上传文件的时候怎么使用富文本编辑器?????
+
+#又遇见一个大bug  Encoding format (tmp) is not supported.
+
+#更改vendor\intervention\image\src\Intervention\Image\AbstractEncoder.php 添加一行case 'tmp':
+
+
+1. 遇见了两个BUG  Invalid argument supplied for foreach()  Encoding format (tmp) is not supported.已经解决,是因为升级框架的原因
+2. php类库Intervention 专门处理图片,可以水印,调整大小等功能,主要是上传图片对图片的二次处理
+3. 网页全部转化为动态,优化了数据库表与表之间的关系(一对多,多对一,多对多)
+学习计划:
+   了解富文本编辑器,用于后台修饰与上传.加强对laravel框架的深入学习
+
+
+# 缓存
+  浏览器缓存  Combo缓存  CDN缓存  页面缓存  数据库(Redis)缓存  laravel的缓存  config/cache.php(分页缓存以及清理)
+
+#升序 ascending  order
+#降序 descending order
+
+# Fractal /英[?fr?ktl] 美[?fr?kt?l] (经典几何学中没有表示的)不规则碎片形
+
+# Laravel中转化层次  Transformer
+
+# Laravel traits
+
+# Laravel scope
+
+# Laravel repositories
+
+
+# Laravel-admin  
+  - 添加路由器 php artisan admin:make UserController --model=App\User(windows系统,其他App\\User)
+  - 添加路由配置 app/Admin/routes.php $router->resource('users', UserController::class);"表名" "控制器名"
+# 数据库的分类  (关系型数据库)
+  关系型数据库实现双向多对多关联关系
+  用关系型数据库映射后，数据库中产生三张表：T表、S表、R表（关系表）
+  (此处不再赘述关系型数据库基础知识，主键、外键、关系约束等相关知识请自行查阅相关资料）
+# trade-off 权衡 交易
+# Laravel-admin
+  model-grid  ->  model-form   (点击进去编辑进入表单页面)
+
+
+#D:\xampp\htdocs\test>php artisan admin:make SuccessController --model=App\Success
+
+
+  [RuntimeException]
+  Unable to detect application namespace.
+  composer.json里边不能写注释吗,去掉注释就可以了,乖乖类啊.
+
+
+#  富文本编辑器出错是因为没有看清版本号
+#  用富文本编辑器编辑出来的都是带格式的
+
+#  294*220
+#  新闻页面 200*200
+#  Laravel中$faker出来的数据没有完全支持中文
+
+#  数据库中日期的类型
+   date 表示年月日，如YY-MM-DD
+   datetime 表示年月日和时间信息，如YY-MM-DD HH:MM:SS
+   datestamp 和datetime表示的信息相同，但时间范围不同
+   时间范围
+
+   date -- > '1000-01-01' to '9999-12-31'.
+   datetime --> '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+   datestamp -- > '1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC
+
+#  Larvel还没有完成分页
+   缩略图和大图要存在一张表中同一个字段中吗(数组形式)?  还是同一张表多个字段
+
+#  {{--  为什么写在父模板上不起作用?  --}}
+  <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
+
+#  日期选择挡住了下边的富文本编辑器

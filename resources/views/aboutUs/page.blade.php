@@ -5,6 +5,8 @@
 @endsection
 
 @section('styles')
+  {{--  为什么写在父模板上不起作用?  --}}
+  <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
   <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 @endsection
 

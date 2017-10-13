@@ -132,6 +132,7 @@ main .content .list-items li dl dd:last-of-type a {
 }
 main .content .list-items li dl dd p {
   line-height: 24px;
+  min-height: 96px;
   margin: 0;
 }
 main .content .list-items li div {

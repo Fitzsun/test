@@ -13,6 +13,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="shortcut icon" href="{{ config('hxja.default_icon') }}">
+
+  <link rel="shortcut icon" href="{{ asset('css/sprite.css') }}">
   
   <!-- 跳转到不同的网页,title的名字不一样 -->
   <title>@yield('title',config('app.name'))</title>

@@ -74,8 +74,8 @@ class LinksController extends Controller
         return Admin::grid(Links::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->link_name('链接名称');
-            $grid->link_href('链接地址');
+            $grid->link_name('链接名称')->editable();
+            $grid->link_href('链接地址')->editable();
             $grid->level('排序');
             $grid->created_at('创建时间');
             $grid->updated_at('更新时间');
@@ -92,6 +92,9 @@ class LinksController extends Controller
         return Admin::form(Links::class, function (Form $form) {
 
             $form->display('id', 'ID');
+            $form->text('link_name','链接名称');
+            $form->editor('link_href','链接地址');
+            $form->number('level','排序');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });

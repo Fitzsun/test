@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Config::load();
 
         // 底部公用的友情链接部分
-        $links = Links::all();
+        $links = Links::take(12)->get();
         view()->share('links',$links);
 
         

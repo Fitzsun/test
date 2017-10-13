@@ -11,6 +11,6 @@ class SuccessTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Success::class,10)->create();
+        factory(App\Success::class,20)->create();
     }
 }

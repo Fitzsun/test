@@ -87,6 +87,10 @@ section > .wrapper .list-items li > div {
   width: 294px;
   height: 100%;
 }
+section > .wrapper .list-items li > div img {
+  height: 100%;
+  width: 100%;
+}
 section > .wrapper .list-items li > dl {
   text-align: left;
   width: 206px;
@@ -97,6 +101,8 @@ section > .wrapper .list-items li > dl {
 section > .wrapper .list-items li > dl dt {
   font-weight: bold;
   font-size: 16px;
+  height: 21px;
+  overflow: hidden;
   color: #333;
 }
 section > .wrapper .list-items li > dl dd {
@@ -108,6 +114,8 @@ section > .wrapper .list-items li > dl dd:last-of-type span {
 }
 section > .wrapper .list-items li > dl dd:last-of-type p {
   line-height: 24px;
+  max-height: 96px;
+  overflow: hidden;
   margin: 0 0 0 70px;
 }
 section > .wrapper .pagination a {

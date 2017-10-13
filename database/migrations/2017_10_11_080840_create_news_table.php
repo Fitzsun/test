@@ -15,14 +15,24 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
+            // 所属类别:(公司新闻,行业资讯)
+            $table->tinyInteger('category_id')->default(0);
             // 新闻标题
             $table->string('title');
             // 发布日期
-            $table->string('publish_at');
+            $table->date('publish_at');
             // 新闻概述
-            $table->string('meta_description');
+            $table->text('meta_description');
             // 新闻图片缩略图
             $table->string('sm_image_url');
+            // 新闻图片大图
+            $table->string('lg_image_url');
+            // 新闻内容
+            $table->text('content');
+            // 是否为热点资讯
+            $table->boolean('is_hot')->default(false);
+            // 是否为最新资讯
+            $table->boolean('is_latest')->default(false);
             $table->timestamps();
         });
     }

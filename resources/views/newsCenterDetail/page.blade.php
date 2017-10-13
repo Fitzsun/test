@@ -45,19 +45,23 @@
     <aside class="aside">
       <dl class="news-list">
         <dt><i class="icon icon-newsTitle"></i><span>热点资讯</span></dt>
-        <dd><i class="icon-newsArrow"></i><a href="#">新风系统有用吗？</a></dd>
-        <dd><i class="icon-newsArrow"></i><a href="#">新房装修时就可以入住？怎样知道甲醛含量？</a></dd>
+        @foreach($hotNews as $new)
+          <dd><i class="icon-newsArrow"></i><a href="#">{{ $new->title }}?</a></dd>
+        @endforeach
+        {{--  <dd><i class="icon-newsArrow"></i><a href="#">新房装修时就可以入住？怎样知道甲醛含量？</a></dd>
         <dd><i class="icon-newsArrow"></i><a href="#">光触媒除甲醛会不会有二次污染问题？</a></dd>
         <dd><i class="icon-newsArrow"></i><a href="#">刚装修的新房，除甲醛用的活性炭应该多久换一次？</a></dd>
-        <dd><i class="icon-newsArrow"></i><a href="#">办公室净化空气，应该选择新风系统还是空气净化...</a></dd>
+        <dd><i class="icon-newsArrow"></i><a href="#">办公室净化空气，应该选择新风系统还是空气净化...</a></dd>  --}}
       </dl>
       <dl class="news-list">
         <dt><i class="icon icon-newsTitle"></i><span>最新动态</span></dt>
-        <dd><i class="icon-newsArrow"></i><a href="#">新风系统有用吗？</a></dd>
-        <dd><i class="icon-newsArrow"></i><a href="#">新房装修时就可以入住？怎样知道甲醛含量？</a></dd>
+        @foreach($latestNews as $li)
+          <dd><i class="icon-newsArrow"></i><a href="#">{{ $li->title }}?</a></dd>
+        @endforeach
+        {{--  <dd><i class="icon-newsArrow"></i><a href="#">新房装修时就可以入住？怎样知道甲醛含量？</a></dd>
         <dd><i class="icon-newsArrow"></i><a href="#">光触媒除甲醛会不会有二次污染问题？</a></dd>
         <dd><i class="icon-newsArrow"></i><a href="#">刚装修的新房，除甲醛用的活性炭应该多久换一次？</a></dd>
-        <dd><i class="icon-newsArrow"></i><a href="#">办公室净化空气，应该选择新风系统还是空气净化...</a></dd>
+        <dd><i class="icon-newsArrow"></i><a href="#">办公室净化空气，应该选择新风系统还是空气净化...</a></dd>  --}}
       </dl>
       <div class="aside-logo"><img src="/static/images/asideLogo.jpg" alt="华夏君安"></div>
       <div><img src="/static/images/workhard.png" alt="为室内空气质量，我们一直在努力"></div>

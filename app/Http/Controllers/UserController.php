@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use App\Links;
+use App\Slides;
 use App\Success;
 use App\Category;
 use App\ProductNav;
@@ -19,7 +21,11 @@ class UserController extends Controller
         $success = Category::where('name', '=', '成功案例')->first();
         $desc = Category::where('name','=','公司简介')->first();
         $successList = Success::take(5)->get();
-        return view('index.page',compact('success','desc','successList'));
+        // 一级轮播图
+        $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
+        // 二级轮播图
+        $slides2 = Slides::where('level','=',2)->orderBy('order','desc')->take(3)->get();
+        return view('index.page',compact('success','desc','successList','slides1','slides2'));
     }
 
     public function about()
@@ -38,12 +44,15 @@ class UserController extends Controller
 
     public function news()
     {
-        return view('newsCenter.page');
+        $news = News::take(6)->get();
+        return view('newsCenter.page',compact('news'));
     }
 
     public function newsDetail()
     {
-        return view('newsCenterDetail.page');
+        $hotNews = News::where('is_hot','=','true')->take(5)->get();
+        $latestNews = News::where('is_latest','=','true')->take(5)->get();
+        return view('newsCenterDetail.page',compact('hotNews','latestNews'));
     }
 
     public function newSys()
@@ -64,7 +73,8 @@ class UserController extends Controller
 
     public function success()
     {
-        return view('success.page');
+        $successList = Success::where('id','>','5')->take(8)->get();
+        return view('success.page',compact('successList'));
     }
 
     public function treatment()

@@ -18,19 +18,21 @@
   <div class="carousel-container" class="clearfix">
     <div class="bd">
       <ul class="carousel-inner clearfix">
-        <li class="show">
-          <a href="#"><img class="img-responsive" src="/static/images/banner.jpg" alt=""></a>
-          <dl class="carousel-caption">
-            <dt></dt>
-            <dd></dd>
-          </dl>
-        </li>
-        <li>
+        @foreach($slides1 as $slide)
+          <li>
+            <a href="{{ $slide->path }}"><img class="img-responsive" src="{{ $slide->imgUrl }}" alt=""></a>
+          </li>
+        @endforeach
+        {{--  <li>
           <a href="#"><img class="img-responsive" src="/static/images/newBanner.jpg" alt=""></a>
         </li>
         <li>
           <a href="#"><img class="img-responsive" src="/static/images/testBanner.jpg" alt=""></a>
-        </li>
+          <dl class="carousel-caption">
+            <dt></dt>
+            <dd></dd>
+          </dl>
+        </li>  --}}
       </ul>
     </div>
     <ol class="clearfix carousel-indicator">
@@ -200,9 +202,11 @@
         <div class="clearfix">
             <div id="slidy-container"> 
               <figure id="slidy"> 
-                <img src="/static/images/newsCarousel1.jpg" alt="jQuery仿淘宝商品多属性查询" data-caption="jQuery仿淘宝商品多属性查询">
-                <img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"> 
-                <img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor">
+                @foreach($slides2 as $slide)
+                  <img src="{{ $slide->imgUrl }}" alt="jQuery仿淘宝商品多属性查询" data-caption="jQuery仿淘宝商品多属性查询">
+                  <img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"> 
+                  <img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor">
+                @endforeach
               </figure> 
             </div> 
           <!-- </div> -->

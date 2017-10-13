@@ -23,7 +23,7 @@ class CreateSuccessesTable extends Migration
             // 案例标题 string('title',50)后可以跟数值限制长度,先放着
             $table->string('title');
             // 服务时间   用什么格式呢?
-            $table->timestamp('serve_time');
+            $table->date('serve_time');
             // 建筑面积 
             $table->string('area');
             // 服务内容

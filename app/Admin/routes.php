@@ -13,6 +13,8 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('slides', SlidesController::class);
     $router->resource('links', LinksController::class);
+    $router->resource('contact', ContactController::class);
+    $router->resource('list', NewsController::class);
 
 });
 
