@@ -15,6 +15,8 @@ Route::group([
     $router->resource('links', LinksController::class);
     $router->resource('contact', ContactController::class);
     $router->resource('list', NewsController::class);
+    $router->resource('product', ProductController::class);
+    $router->resource('success', SuccessController::class);
 
 });
 

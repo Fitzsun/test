@@ -33,6 +33,8 @@ class CreateNewsTable extends Migration
             $table->boolean('is_hot')->default(false);
             // 是否为最新资讯
             $table->boolean('is_latest')->default(false);
+            // 是否显示到首页
+            $table->boolean('is_index')->default(false);
             $table->timestamps();
         });
     }

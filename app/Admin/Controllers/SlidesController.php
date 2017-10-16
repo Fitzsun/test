@@ -24,8 +24,8 @@ class SlidesController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮播图');
+            $content->description('一二级轮播图');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class SlidesController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮播图');
+            $content->description('一二级轮播图');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class SlidesController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮播图');
+            $content->description('一二级轮播图');
 
             $content->body($this->form());
         });
@@ -75,11 +75,16 @@ class SlidesController extends Controller
 
             $grid->id('ID')->sortable();
             $grid->slide_name('图片名称')->editable();
-            $grid->imgUrl('图片地址')->editable();
-            $grid->level('轮播图等级')->select([
-                1 => '一级',
-                2 => '二级',
-            ]);
+            // $grid->picture()->image();
+            // $grid->imgUrl('图片地址')->image('http://127.0.0.1/',100,100);
+            $grid->imgUrl('图片缩略图')->display(function ($path) {
+                
+                    // 记得带上端口号
+                    return 'http://127.0.0.1:83/uploads/'. $path;
+                
+                })->image(200,200);
+            $grid->path('跳转路径')->editable();
+            $grid->level('轮播图等级')->editable('select', [1 => '一级轮播', 2 => '二级轮播']);
             $grid->order('排序');
             $grid->created_at('创建时间');
             $grid->updated_at('更新时间');
@@ -99,19 +104,19 @@ class SlidesController extends Controller
             // 添加text类型的input框
             $form->text('slide_name', '幻灯名称');
             $levels = [
-                '一级轮播图'  => 1,
-                '二级轮播图' => 2,
+                1 => '一级轮播图',
+                2 => '二级轮播图',
             ];
-            $form->select('level','幻灯片等级')->options($levels);
+            $form->select('level','幻灯片等级')->options($levels)->help('一级轮播图尺寸1920*1080;二级轮播图尺寸800*700');
             // $form->textarea('path','路径');
             $form->text('order', '排序');
             // $form->file('title', '幻灯图片');
             // $form->image('slide_name','幻灯图片');
-            $form->image('imgUrl','选择图片')->name(function ($file) {
-                return 'test.'.$file->guessExtension();
-            })->resize(800, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->move('public/uploads/image1');
+            $form->text('path','路径');
+            // ->resize(1920, null, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // })
+            $form->image('imgUrl','选择轮播图')->rules('nullable')->removable();
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '修改时间');
             // resize用来调整大小  接一个函数进行约束
@@ -127,8 +132,8 @@ class SlidesController extends Controller
             // $form->image($column[, $label])->removable();
             // $form->text('href', '链接地址');
             
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            // $form->display('created_at', 'Created At');
+            // $form->display('updated_at', 'Updated At');
         });
     }
 }

@@ -6,6 +6,7 @@ use App\News;
 use App\Links;
 use App\Slides;
 use App\Success;
+use App\Product;
 use App\Category;
 use App\ProductNav;
 use Illuminate\Http\Request;
@@ -63,7 +64,8 @@ class UserController extends Controller
     public function product()
     {
         $navs =ProductNav::with('allChildrenNavs')->get();
-        return view('productCenter.page',compact('navs'));
+        $products =Product::take(12)->get();
+        return view('productCenter.page',compact('navs','products'));
     }
 
     public function productDetail()

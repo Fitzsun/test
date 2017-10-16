@@ -24,7 +24,7 @@ class CreateSlidesTable extends Migration
             $table->smallInteger('level');
             // 顺序靠前的显示
             $table->smallInteger('order');
-            $table->string('imgUrl');
+            $table->string('imgUrl')->nullable();
             $table->timestamps();
         });
     }

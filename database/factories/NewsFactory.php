@@ -17,5 +17,6 @@ $factory->define(App\News::class, function () {
         'content' => $faker->sentence($nbWords = 11, $variableNbWords = true),
         'is_hot'  => $faker->boolean($chanceOfGettingTrue = 50),
         'is_latest'  => $faker->boolean($chanceOfGettingTrue = 50),
+        'is_index'  => $faker->boolean($chanceOfGettingTrue = 50)
     ];
 });
