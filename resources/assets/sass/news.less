@@ -149,10 +149,16 @@ main{
     min-height:300px;
   }
   .pagination{
-    a{
-      color:#999;
+    li{
+      display: inline-block;
       // border:1px solid red;
-      padding:5px 10px;
+      .active{
+        color:red;
+      }
+      a{
+        color:#999;
+        padding:5px 10px;  
+      }
     }
   }
 }

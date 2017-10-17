@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 
 use App\News;
 use App\Links;
@@ -45,7 +46,7 @@ class UserController extends Controller
 
     public function news()
     {
-        $news = News::take(6)->get();
+        $news = DB::table('news')->paginate(6);
         return view('newsCenter.page',compact('news'));
     }
 

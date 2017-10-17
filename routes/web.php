@@ -48,7 +48,8 @@ Route::get('/product', 'UserController@product');
 Route::get('/productDetail', 'UserController@productDetail');
 Route::get('/success', 'UserController@success');
 Route::get('/treatment', 'UserController@treatment');
-
+// 先搞懂业务逻辑再配置路由,产品中心->产品详情->产品类别->产品id->客户提交的表单  提交后的动作('提示提交成功按钮')
+Route::post('/productDetail/{category}/{id}', 'FeedbackController@store');
 // 下述方法报错: 
 // Route::get('/index', function(){
 //     return view()->file('/public/page.html');

@@ -40,12 +40,15 @@
     <div class="right-form">
       <p>快速报价</p>
       <p>我们会尽快通过电话给您做出详细报价，您也可以立即致电188-0022-2288</p>
-      <form action="" method="" enctype="">
-        <input type="text" placeholder="姓名" name="" id="" onfocus="this.placeholder=''" onblur="this.placeholder='姓名'">
-        <input type="tel" name="" id="" placeholder="电话" onfocus="this.placeholder=''" onblur="this.placeholder='电话'">
-        <input type="text" name="" id="" placeholder="房屋面积/汽车型号" onfocus="this.placeholder=''" onblur="this.placeholder='房屋面积/汽车型号'">
-        <button type="submit"><span>提交</span></button>
+      
+      <!-- action="" method="" enctype="" -->
+      <form>
+        <input type="text" placeholder="姓名" name="name" id="name" onfocus="this.placeholder=''" onblur="this.placeholder='姓名'">
+        <input type="tel" name="phone" id="phnoe" placeholder="电话" onfocus="this.placeholder=''" onblur="this.placeholder='电话'">
+        <input type="text" name="area" id="area" placeholder="房屋面积/汽车型号" onfocus="this.placeholder=''" onblur="this.placeholder='房屋面积/汽车型号'">
+        <button type="submit"><a href="{{  }}">提交</a></button>
       </form>
+
     </div>
   </div>
   <div class="parameters">

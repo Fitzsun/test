@@ -24,8 +24,8 @@ class ContactController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('联系我们');
+            $content->description('图表');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class ContactController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('联系我们');
+            $content->description('编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class ContactController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('联系我们');
+            $content->description('新建');
 
             $content->body($this->form());
         });
@@ -76,10 +76,10 @@ class ContactController extends Controller
             $grid->id('ID')->sortable();
             $grid->phone('电话号码')->editable();
             $grid->email('邮箱')->editable();
-            $grid->address('公司地址')->editable();
-            $grid->slogan('公司口号')->editable();
-            $grid->created_at();
-            $grid->updated_at();
+            $grid->address('公司地址')->editable('textarea');
+            $grid->slogan('公司口号')->editable('textarea');
+            $grid->created_at('创建日期')->sortable();
+            $grid->updated_at('更新日期');
         });
     }
 
@@ -99,8 +99,6 @@ class ContactController extends Controller
             $form->text('address','公司地址');
             $form->text('slogan','公司口号');
             $form->text('imgUrl','图片路径')->default('/');
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
         });
     }
 }

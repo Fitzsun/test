@@ -73,8 +73,9 @@ class NewsController extends Controller
     {
         return Admin::grid(News::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->id('新闻ID')->sortable();
             $grid->column('title','新闻标题')->editable();
+            $grid->order('排序')->editable();
             $grid->category_id('所属类别')->editable('select', [0 => '公司', 1 => '产品']);
             $states = [
                 'on'  => ['value' => 1, 'text' => '打开', 'color' => 'primary'],
@@ -83,9 +84,9 @@ class NewsController extends Controller
             $grid->is_index('显示在首页 ?')->switch();
             $grid->is_hot('最热 ?')->switch();
             $grid->is_latest('最新 ?')->switch();
-            $grid->publish_at('日期')->editable();
-            $grid->created_at();
-            $grid->updated_at();
+            $grid->publish_at('发布日期')->editable('date');
+            $grid->created_at('创建时间');
+            $grid->updated_at('更新时间');
         });
     }
 
@@ -99,19 +100,20 @@ class NewsController extends Controller
         return Admin::form(News::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('title','标题');
+            $form->date('publish_at','发布日期')->format('YYYY-MM-DD');
+            $form->text('title','新闻标题');
             $form->select('category_id','所属类别')->options([0=>'公司',1=>'产品']);
-            $form->datetime('publish_at','发布日期')->format('YYYY-MM-DD');
             $form->image('sm_image_url','选择缩略图片')->resize(200, 200, function ($constraint) {
                 $constraint->aspectRatio();
-            })->help('缩略图尺寸为200*200');
+            })->help('缩略图尺寸为200*200,请保证上传图片大于改尺寸');
             $form->image('lg_image_url','选择正文图片')->resize(800, 322, function ($constraint) {
                 $constraint->aspectRatio();
-            })->help('正文图尺寸为800*322');
+            })->help('正文图尺寸为800*322,请保证上传图片大于改尺寸');
             $form->editor('meta_decription','新闻概述');
             $form->editor('content','新闻主体');
             $form->switch('is_hot','是否设为最热')->options(['true' => '是', 'false'=> '否'])->default('false');
             $form->switch('is_latest','是否设为最新')->options(['true' => '是', 'false'=> '否'])->default('false');
+            $form->slider('order','排序')->options(['max' => 100, 'min' => 1, 'step' => 1])->help('请注意:排序靠前的优先显示');
         });
     }
 }

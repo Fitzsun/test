@@ -142,7 +142,13 @@ main .content .list-items li div {
 main .tab-content {
   min-height: 300px;
 }
-main .pagination a {
+main .pagination li {
+  display: inline-block;
+}
+main .pagination li .active {
+  color: red;
+}
+main .pagination li a {
   color: #999;
   padding: 5px 10px;
 }

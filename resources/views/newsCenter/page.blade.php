@@ -45,7 +45,7 @@
             <li>
               <dl>
                 <dt>{{ $new->title }}</dt>
-                <dd>{{ $new->published_at }}</dd>
+                <dd>{{ $new->publish_at }}</dd>
                 <dd>
                   <p>
                   {{ $new->meta_description }}
@@ -136,7 +136,10 @@
           <h1>这是第二个标签页</h1>
         </div>
       </div>
-      <div class="pagination">
+      @include('pagination.default', ['paginator' => $news])
+      
+
+      {{--  <div class="pagination">
         <a href="#">首页</a>
         <a href="#">上一页</a>
         <a href="#">1</a>
@@ -147,7 +150,7 @@
         <a href="#">下一页</a>
         <a href="#">尾页</a>
         <a>共<span>10</span>页</a>
-      </div>
+      </div>  --}}
     </div>
   </main>
 </section>

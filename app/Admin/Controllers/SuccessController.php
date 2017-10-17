@@ -73,14 +73,25 @@ class SuccessController extends Controller
     {
         return Admin::grid(Success::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->id('案例ID')->sortable();
             $grid->sm_image_url('图片缩略图')->display(function ($path) {
                 
                     // 记得带上端口号
                     return 'http://127.0.0.1:83/uploads/'. $path;
                 
+                })->image(294,220);
+            $grid->lg_image_url('案例正文图')->display(function ($path) {
+                
+                    // 记得带上端口号
+                    return 'http://127.0.0.1:83/uploads/'. $path;
+                
                 })->image(200,200);
-            $grid->created_at();
+            $grid->category_id('所属类别')->editable('select',[1 => '室内除甲醛', 2 => '车内除甲醛', 3 => '新风系统', 4 => '空气检测']);
+            $grid->column('title','案例名称')->editable();
+            $grid->serve_time('服务时间')->editable('date');
+            $grid->area('面积/型号等')->editable();
+            $grid->serve_content('服务内容')->substr(1, 20)->editable('textarea');
+            $grid->created_at()->sortable();
             $grid->updated_at();
         });
     }
@@ -94,10 +105,13 @@ class SuccessController extends Controller
     {
         return Admin::form(Success::class, function (Form $form) {
 
-            $form->display('id', 'ID');
-
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->date('serve_time','服务时间')->format('YYYY-MM-DD');
+            $form->display('id', '案例ID');
+            $form->select('category_id','所属类别')->options([1 => '室内除甲醛', 2 => '车内除甲醛', 3 => '新风系统', 4 => '空气检测']);
+            $form->text('title','案例标题');
+            $form->text('area','面积/型号等');
+            $form->image('sm_image_url','选择缩略图片')->rules('nullable')->resize(294,220)->removable();
+            $form->editor('serve_content','服务内容');
         });
     }
 }

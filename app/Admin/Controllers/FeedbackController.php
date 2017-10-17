@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Links;
+use App\Feedback;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class LinksController extends Controller
+class FeedbackController extends Controller
 {
     use ModelForm;
 
@@ -24,7 +24,7 @@ class LinksController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('友情链接');
+            $content->header('客户信息');
             $content->description('图表');
 
             $content->body($this->grid());
@@ -41,7 +41,7 @@ class LinksController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('友情链接');
+            $content->header('客户信息');
             $content->description('编辑');
 
             $content->body($this->form()->edit($id));
@@ -57,7 +57,7 @@ class LinksController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('友情链接');
+            $content->header('客户信息');
             $content->description('新建');
 
             $content->body($this->form());
@@ -71,14 +71,12 @@ class LinksController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Links::class, function (Grid $grid) {
+        return Admin::grid(Feedback::class, function (Grid $grid) {
 
-            $grid->id('链接ID')->sortable();
-            $grid->link_name('链接名称')->editable();
-            $grid->link_href('链接地址')->editable();
-            $grid->level('排序')->editable();
-            $grid->created_at('创建时间');
-            $grid->updated_at('更新时间');
+            $grid->id('ID')->sortable();
+
+            $grid->created_at();
+            $grid->updated_at();
         });
     }
 
@@ -89,12 +87,12 @@ class LinksController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Links::class, function (Form $form) {
+        return Admin::form(Feedback::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('link_name','链接名称');
-            $form->url('link_href','链接地址');
-            $form->slider('level','排序')->options(['max' => 100, 'min' => 1, 'step' => 1])->help('请注意:排序靠前的优先显示');
+
+            $form->display('created_at', '创建日期');
+            $form->display('updated_at', '更新日期');
         });
     }
 }

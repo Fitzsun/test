@@ -17,6 +17,7 @@ Route::group([
     $router->resource('list', NewsController::class);
     $router->resource('product', ProductController::class);
     $router->resource('success', SuccessController::class);
+    $router->resource('feedback', FeedbackController::class);
 
 });
 

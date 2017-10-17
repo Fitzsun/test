@@ -10,6 +10,7 @@ $factory->define(App\News::class, function () {
     return [
         'category_id' => $faker->numberBetween($min=0,$max=1),
         'title' => $title,
+        'order' => $faker->numberBetween($min=0,$max=50),
         'publish_at' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'meta_description' =>$parag,
         'sm_image_url' => $faker->imageUrl($width=200,$height=200),

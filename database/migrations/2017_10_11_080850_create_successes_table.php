@@ -22,9 +22,9 @@ class CreateSuccessesTable extends Migration
             $table->string('sm_image_url');
             // 案例标题 string('title',50)后可以跟数值限制长度,先放着
             $table->string('title');
-            // 服务时间   用什么格式呢?
+            // 服务时间   用什么格式呢? timestamps 带时分秒而且去不掉 所以此处用date字段
             $table->date('serve_time');
-            // 建筑面积 
+            // 建筑面积/汽车型号
             $table->string('area');
             // 服务内容
             $table->string('serve_content');

@@ -15,15 +15,12 @@ class CreateProductNavsTable extends Migration
     {
         Schema::create('product_navs', function (Blueprint $table) {
             $table->increments('id');
+            // 用于区分是否为一级菜单
             $table->tinyInteger('parent_id')->unsigned()->default(0);
-            // $table->string('title');
-            $table->string('product_name');
-            // 
-            $table->string('sm_image_url');
-            // 是一个数组?
-            $table->string('lg_image_url');
-            // 直接传入商品ID参数
-            // $table->string('path');
+            // 所属类别名字  新风系统  
+            $table->string('product_category');
+            // 之情为path
+            $table->string('product_path');
             $table->timestamps();
         });
     }
