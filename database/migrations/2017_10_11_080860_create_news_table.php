@@ -22,7 +22,7 @@ class CreateNewsTable extends Migration
             // 发布日期
             $table->date('publish_at');
             // 排序
-            $table->smallInteger('order');
+            $table->smallInteger('order')->unsigned();
             // 新闻概述
             $table->text('meta_description');
             // 新闻图片缩略图

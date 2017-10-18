@@ -47,23 +47,23 @@
   <section id="desc">
     <main>
       <div class="desc-list overflow clearfix">
-        <dl>
+        <dl class="animate-this">
           <dt>甲醛治理</dt>
           <dd>室内车内甲醛治理，还你清新呼吸</dd>
           <dd><img src="/static/images/Formaldehyde.png" alt=""></dd>
-          <dd><a href="#">查看详情</a></dd>
+          <dd><a href="/treatment">查看详情</a></dd>
         </dl>
-        <dl>
+        <dl class="animate-this">
           <dt>新风系统</dt>
           <dd>让呼吸更自由，远离雾霾等伤害</dd>
           <dd><img src="/static/images/newSystem.png" alt=""></dd>
-          <dd><a href="#">查看详情</a></dd>
+          <dd><a href="/newSys">查看详情</a></dd>
         </dl>
-        <dl>
+        <dl class="animate-this">
           <dt>室内空气检测</dt>
           <dd>对身边的空气环境全方位了解</dd>
           <dd><img src="/static/images/airTest.png" alt=""></dd>
-          <dd><a href="#">查看详情</a></dd>
+          <dd><a href="/airTest">查看详情</a></dd>
         </dl>
       </div>
       <div class="product-center">
@@ -72,32 +72,24 @@
           <li>
             <a href="#"><span>华夏君安产品中心</span></a>
           </li>
-          <li>
-            <a href="#"><span>霍尼韦尔T30新风系统</span></a>
-            <img src="/static/images/product2.png" alt="">
-          </li>
-          <li>
-            <a href="#"></a>
-            <img src="/static/images/product3.png" alt="">
-          </li>
-          <li>
-            <a href="#"></a>
-            <img src="/static/images/product4.png" alt="">
-          </li>
+          @for($i=0;$i<3;$i++)
+              <li>
+                <a href="#">
+                  <i>{{ $products[$i]->product_name }}</i>
+                  <img src="{{ $products[$i]->product_thumbnail_url }}" alt="">
+                </a>
+              </li>
+          @endfor
         </ul>
         <ul class="clearfix">
-          <li>
-            <a href="#"><span>华夏君安产品中心</span></a>
-            <img src="/static/images/product2.png" alt="">
-          </li>
-          <li>
-            <a href="#"></a>
-            <img src="/static/images/product3.png" alt="">
-          </li>
-          <li>
-            <a href="#"></a>
-            <img src="/static/images/product4.png" alt="">
-          </li>
+          @for($i=3;$i<=5;$i++)
+            <li>
+              <a href="#">
+                <i>{{ $products[$i]->product_name }}</i>
+                <img src="{{ $products[$i]->product_thumbnail_url }}" alt="">
+              </a>
+            </li>
+          @endfor
         </ul>
       </div>
       <div class="company-desc">
@@ -106,12 +98,12 @@
       </div>
     </main>
   </section>
-  <div id="smbanner"></div>
+  <div id="smbanner" class="animate-this"></div>
   <section id="bottom">
     <main>
       <div class="successful-cases">
-        <p>{{ $success->name }}<span>{{ $success->en_name}}</span></p>
-        <div class="list-items">
+        <p class="animate-this">{{ $success->name }}<span>{{ $success->en_name}}</span></p>
+        <div class="list-items animate-this">
           <ul class="clearfix">
             @foreach($successList as $li)
             <li>
@@ -127,21 +119,22 @@
               <span></span>
             </li>
             @endforeach
- 
           </ul>
           <a href="#">查看更多</a>
         </div>
       </div>
       <div class="honor">
-        <p>荣誉资质<span>Honor and qualification of Huaxiajunan</span></p>
-        <ul class="clearfix">
+        <p class="animate-this">荣誉资质<span>Honor and qualification of Huaxiajunan</span></p>
+        <ul class="clearfix animate-this">
+        @foreach($honors as $honor)
           <li>
             <div>
-              <img src="/static/images/honor1.jpg" alt="">
+              <img src="{{ $honor->honor_image_url }}" alt="">
             </div>
-            <p>室内环境监测治理达标单位</p>
+            <p>{{ $honor->name }}</p>
           </li>
-          <li>
+        @endforeach
+          {{--  <li>
             <div>
               <img src="/static/images/honor2.jpg" alt="">
             </div>
@@ -164,9 +157,9 @@
               <img src="/static/images/honor5.jpg" alt="">
             </div>
             <p>室内环境监测治理达标单位</p>
-          </li>
+          </li>  --}}
         </ul>
-        <ul class="clearfix">
+        <ul class="clearfix animate-this">
           <li>
             <div><img src="/static/images/advantage1.png" alt=""></div>
             <dl>
@@ -197,26 +190,23 @@
           </li>
         </ul>
       </div>
-      <div class="news">
+      <div class="news animate-this">
         <p>新闻资讯</p>
         <div class="clearfix">
             <div id="slidy-container"> 
               <figure id="slidy"> 
-                @foreach($slides2 as $slide)
-                  <img src="{{ $slide->imgUrl }}" alt="jQuery仿淘宝商品多属性查询" data-caption="jQuery仿淘宝商品多属性查询">
-                  <img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"> 
-                  <img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor">
+                @foreach($news as $new)
+                  <img src="{{ $new->lg_image_url }}" alt="jQuery仿淘宝商品多属性查询" data-caption="{{ $new->title }}">
+                  {{--  <img src="/static/images/newsCarousel1.jpg" alt="jQuery结合elevateZoom演示多种放大镜效果" data-caption="jQuery结合elevateZoom演示多种放大镜效果"> 
+                  <img src="/static/images/newsCarousel1.jpg" alt="百度编辑器ueditor" data-caption="百度编辑器ueditor">  --}}
                 @endforeach
               </figure> 
             </div> 
           <!-- </div> -->
           <ul class="list-news">
-            <li><a href="#">&gt; 随总理访韩爱品生新风系统影响力从欧洲向亚太地区延伸</a><span>2017-08-02</span></li>
-            <li><a href="#">&gt; 新风机要注意哪些内容?</a><span>2017-08-02</span></li>
-            <li><a href="#">&gt; 新风机要注意哪些内容?</a><span>2017-08-02</span></li>
-            <li><a href="#">&gt; 新风机要注意哪些内容?</a><span>2017-08-02</span></li>
-            <li><a href="#">&gt; 新风机要注意哪些内容?</a><span>2017-08-02</span></li>
-            <li><a href="#">&gt; 新风机要注意哪些内容?</a><span>2017-08-02</span></li>
+            @foreach($news as $new)
+              <li><a href="/newsDetail">&gt; {{ $new->title }}</a><span>{{ $new->publish_at }}</span></li>
+            @endforeach
           </ul>
         </div>
       </div>
@@ -225,7 +215,7 @@
 
   </div>
 
-  <div id="content-bot">
+  <div id="content-bot" class="animate-this">
     <div class="friendly-link">
       <p>友情链接</p>
       <ul class="clearfix">

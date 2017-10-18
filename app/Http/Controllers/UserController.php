@@ -9,6 +9,7 @@ use App\Slides;
 use App\Success;
 use App\Product;
 use App\Category;
+use App\Standard;
 use App\ProductNav;
 use Illuminate\Http\Request;
 // 在view.php中配置前端页面的目录位置
@@ -27,7 +28,13 @@ class UserController extends Controller
         $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
         // 二级轮播图
         $slides2 = Slides::where('level','=',2)->orderBy('order','desc')->take(3)->get();
-        return view('index.page',compact('success','desc','successList','slides1','slides2'));
+        // 首页新闻
+        $news = News::where('is_index','=',true)->orderby('order','asc')->take(6)->get();
+        // 产品
+        $products = Product::orderby('product_order','asc')->take(6)->get();
+        // 荣誉
+        $honors = Standard::where('category_id','=',0)->orderby('order','asc')->take(5)->get();
+        return view('index.page',compact('success','desc','successList','slides1','slides2','news','products','honors'));
     }
 
     public function about()
@@ -41,7 +48,8 @@ class UserController extends Controller
 
     public function airTest()
     {
-        return view('airTest.page');
+        $standards = Standard::where('category_id','=',1)->orderBy('order','asc')->take(4)->get();
+        return view('airTest.page',compact('standards'));
     }
 
     public function news()
@@ -59,7 +67,8 @@ class UserController extends Controller
 
     public function newSys()
     {
-        return view('newSystem.page');
+        $products = Product::where('category_id','=','2')->orderby('product_order','asc')->paginate(8);
+        return view('newSystem.page',compact('products'));
     }
 
     public function product()

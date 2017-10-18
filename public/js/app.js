@@ -800,6 +800,7 @@ module.exports = __webpack_require__(46);
  */
 
 __webpack_require__(10);
+// require('./jquery.waypoints.min.js');
 
 // window.Vue = require('vue');
 

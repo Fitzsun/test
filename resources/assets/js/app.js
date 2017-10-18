@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+// require('./jquery.waypoints.min.js');
 
 // window.Vue = require('vue');
 

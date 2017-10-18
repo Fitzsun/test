@@ -14,7 +14,9 @@
 
   <link rel="shortcut icon" href="{{ config('hxja.default_icon') }}">
 
-  <link rel="shortcut icon" href="{{ asset('css/sprite.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
   
   <!-- 跳转到不同的网页,title的名字不一样 -->
   <title>@yield('title',config('app.name'))</title>
@@ -55,7 +57,6 @@
 
     @include('particals.footer')
     
-  @section('scripts')
 
     <script src="{{ asset('js/app.js') }}"></script>
 
@@ -63,8 +64,36 @@
 
     <script src="{{ asset('js/common.page.js') }}"></script>
 
-  @show
-  
+    <script src="{{ asset('static/js/jquery.waypoints.min.js') }}"></script>
+
+    <script>
+    var ssAnimations = function() {
+      $('.animate-this').waypoint({
+        element: document.getElementsByClassName('animate-this'),
+        handler: function(direction) {
+          var defAnimationEfx = "fadeInUp";
+          if ( direction === 'down' && !$(this.element).hasClass('animated')) {
+            $(this.element).addClass('item-animate');
+            setTimeout(function() {
+              $('body .animate-this.item-animate').each(function(ctr) {
+                var el = $(this),
+                animationEfx = el.data('animate') || null;	
+                if (!animationEfx) { animationEfx = defAnimationEfx; }
+                setTimeout( function () {
+                  el.addClass(animationEfx + ' animated');
+                  el.removeClass('item-animate');
+                }, ctr * 30);
+              });								
+            }, 100);
+          }
+          // trigger once only
+          this.destroy(); 
+        }, 
+        offset: '100%'
+      });
+    }
+      ssAnimations();
+    </script>
   @yield('scripts')
   </body>
 </html>
