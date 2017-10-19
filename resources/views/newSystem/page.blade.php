@@ -24,29 +24,29 @@
 <div id="banner"></div>
 <section id="main">
   <main>
-    <ul class="list-icons clearfix animate-this">
-      <li>
+    <ul class="list-icons clearfix">
+      <li class="hiding animated service" data-animation="fadeInUp" data-delay="200">
         <dl>
           <dd><img src="/static/images/brand.png" alt=""></dd>
           <dd>PREMIUM BRAND</dd>
           <dt>一线品牌</dt>
         </dl>
       </li>
-      <li>
+      <li class="hiding animated service" data-animation="fadeInUp" data-delay="400">
         <dl>
           <dd><img src="/static/images/focus.png" alt=""></dd>
           <dd>PROFESSIONAL AND FOCUSED</dd>
           <dt>专业专注</dt>
         </dl>
       </li>
-      <li>
+      <li class="hiding animated service" data-animation="fadeInUp" data-delay="600">
         <dl>
           <dd><img src="/static/images/advanced.png" alt=""></dd>
           <dd>INDUSTRY LEADING</dd>
           <dt>行业领先</dt>
         </dl>
       </li>
-      <li>
+      <li class="hiding animated service" data-animation="fadeInUp" data-delay="800">
         <dl>
           <dd><img src="/static/images/afterService.png" alt=""></dd>
           <dd>INTIMATE AFTER-SALES</dd>
@@ -55,16 +55,16 @@
       </li>
     </ul>
     <div class="newAir">
-      <ul class="list-tabs clearfix animate-this">
+      <ul class="list-tabs clearfix">
         <li class="active"><a href="#tab1">家用新风</a><i></i></li>
         <li><a href="#tab2">别墅新风</a><i></i></li>
         <li><a href="#tab3">商用新风</a><i></i></li>
         <li><a href="#tab4">配件系列</a><i></i></li>
       </ul>
-      <div class="tab-container animate-this">
+      <div class="tab-container">
         <ul id="tab1" class="list-items tab-content">
-        @foreach($products as $product)
-          <li>
+        @foreach($products as $key=>$product)
+          <li class="hiding animated" data-animation="fadeInRight" data-delay="{{ ($key+1)*300 }}">
             <dl>
               <dd><img src="{{ $product->product_thumbnail_url }}" alt=""></dd>
               <dt>{{ $product->product_name }}</dt>

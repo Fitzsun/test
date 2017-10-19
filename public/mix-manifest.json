@@ -14,7 +14,10 @@
     "/css/index.css": "/css/index.css",
     "/static/js/html5shiv.min.js": "/static/js/html5shiv.min.js",
     "/static/js/respond.min.js": "/static/js/respond.min.js",
+    "/js/jquery.appear.js": "/js/jquery.appear.js",
     "/js/index.js": "/js/index.js",
     "/js/common.page.js": "/js/common.page.js",
-    "/js/switch.js": "/js/switch.js"
+    "/js/switch.js": "/js/switch.js",
+    "/js/wow.min.js": "/js/wow.min.js",
+    "/css/animate.min.css": "/css/animate.min.css"
 }

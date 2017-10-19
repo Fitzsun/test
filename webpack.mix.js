@@ -27,6 +27,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/common.page.js', 'public/js')
    .js('resources/assets/js/vendor/html5shiv.min.js', 'public/static/js')
    .js('resources/assets/js/vendor/respond.min.js', 'public/static/js')
+   .js('resources/assets/js/vendor/jquery.appear.js','public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .less('resources/assets/sass/base.less','public/css')
    .less('resources/assets/sass/about.less','public/css')
@@ -39,6 +40,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .less('resources/assets/sass/success.less','public/css')
    .less('resources/assets/sass/treatment.less','public/css')
    .less('resources/assets/sass/index.less','public/css');
+
+mix.copy('node_modules/wowjs/dist/wow.min.js','public/js');
+mix.copy('node_modules/animate.css/animate.min.css','public/css');
 
 
 

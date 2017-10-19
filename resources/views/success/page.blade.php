@@ -26,8 +26,8 @@
     </ul>
     <div class="tab-container">
       <ul id="tab1" class="list-items tab-content">
-        @foreach($successList as $li)
-          <li>
+        @foreach($successList as $key=>$li)
+          <li class="hiding animated" data-animation="fadeInRight" data-delay="{{ ($key+1)*100 }}">
             <div>
               <img src="{{ $li->sm_image_url }}" alt="学而思培优甲醛治理">
             </div>
@@ -42,104 +42,6 @@
             </dl>
           </li>
         @endforeach
-        {{--  <li>
-          <div>
-            <img src="/static/images/succCase2.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase3.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase4.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase5.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase6.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase1.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <div>
-            <img src="/static/images/succCase2.jpg" alt="学而思培优甲醛治理">
-          </div>
-          <dl>
-            <dt>学而思培优甲醛治理</dt>
-            <dd>服务时间：<span>2016.05.08</span></dd>
-            <dd>建筑面积：<span>5000平方米</span></dd>
-            <dd>
-              <span>服务内容：</span>
-              <p>超标甲醛及粉尘治理，治理后，原超标污染物均符合国家标注。</p>
-            </dd>
-          </dl>
-        </li>  --}}
       </ul>
       <div id="tab2" class="tab-content">
         <h1>这是第二个Tab页</h1>

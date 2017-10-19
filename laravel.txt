@@ -217,3 +217,73 @@ GD库是干什么用的呢！它是php处理图形的扩展库，GD库提供了一系列用来处理图片的API，
   <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
 
 #  日期选择挡住了下边的富文本编辑器
+
+
+# 2017.10.16
+  微信小程序
+  持续深入laravel&lumen
+
+# 开始一个Laravel或Lumen项目
+  1.通过安装器创建
+  composer global require "laravel/lumen-installer"
+  composer global require "laravel/laravel-installer"
+  2.通过composer创建
+  composer create-project --prefer-dist laravel/lumen blog
+  composer create-project --prefer-dist laravel/laravel blog
+
+# 关系型数据库 MySQL  非关系型数据库 MongoDB
+
+# CSS3新属性  object-fit:cover contain fill
+
+# Laravel中软删除的定义
+  所谓软删除指的是数据表记录并未真的从数据库删除，而是将表记录的标识状态标记为软删除，这样在查询的时候就  可以加以过滤，让对应表记录看上去是被”删除“了。需要使用SoftDeletes 和$dates属性数组,将delete_at置入其中
+
+# Laravel中queryScope和setAttribute
+  应用场景
+
+# {!! !!} 相当于 <?php echo $value; ?> 没有转义
+  {{ }} 相当于 <?php echo htmlspecialchars($value); ?> 转义
+
+#  这也是我要问的问题
+   商品详细信息包括多张图片是怎么存到数据库的,一个字段存入多张图片地址？文章是怎么存到数据库的？因为一般页面文章还有格式的，比如空格、换行、隔一行.....是把一堆文字放到数据库某个字段，还是把文章的带有html标签的内容放到某个字段，还是其他的？
+
+#  字段中的缩略图显示问题?
+
+#  trait  特点 特性 少许
+
+#  百度统计(趋势分析,页面分析,来源分析,访客分析)  向网站添加JS代码,自己写的安全
+
+#  $grid->product_category('所属类别')->editable('select',[home=>'家用新风系统',villa=>'',3=>'除甲醛设备']);  怎么使用Laravel中的API搞定?
+
+#  tab组件
+
+#  Eloquent 动人的;雄辩的;有口才的;有说明力的;富于表情的,逼真的
+
+#  一对一关系  return $this->hasOne('Account','user_id','id') foreign_key    local_key
+
+#  Laravel-admin 关联模型(没搞懂)
+
+#  几乎每张表(重点:产品)都涉及到排序的问题,因为用户有这种优先显示的需求
+
+#  怎么改变富文本编辑器wangeditor的z-index
+
+#  有多种方式实现分页，最简单的方式就是使用查询构建器或Eloquent模型的paginate方法。该方法基于当前用户查看   页自动设置合适的偏移（offset）和限制（limit）
+
+#  2017.10.18
+
+#  学会了Laravel@for循环
+@for($i=3;$i<=5;$i++)
+            <li>
+              <a href="#">
+                <i>{{ $products[$i]->product_name }}</i>
+                <img src="{{ $products[$i]->product_thumbnail_url }}" alt="">
+              </a>
+            </li>
+          @endfor
+#  tab页的缓存
+
+#  Laravel huaxiajunan 401 404 500
+
+#  完全是前后端分离吗?
+
+#  首页轮播图加载太慢怎么办?

@@ -23,16 +23,6 @@
             <a href="{{ $slide->path }}"><img class="img-responsive" src="{{ $slide->imgUrl }}" alt=""></a>
           </li>
         @endforeach
-        {{--  <li>
-          <a href="#"><img class="img-responsive" src="/static/images/newBanner.jpg" alt=""></a>
-        </li>
-        <li>
-          <a href="#"><img class="img-responsive" src="/static/images/testBanner.jpg" alt=""></a>
-          <dl class="carousel-caption">
-            <dt></dt>
-            <dd></dd>
-          </dl>
-        </li>  --}}
       </ul>
     </div>
     <ol class="clearfix carousel-indicator">
@@ -46,20 +36,20 @@
   </div>
   <section id="desc">
     <main>
-      <div class="desc-list overflow clearfix">
-        <dl class="animate-this">
+      <div class="desc-list overflow clearfix overflow-scroll">
+        <dl class="hiding animated service" data-animation="fadeInRight" data-delay="600">
           <dt>甲醛治理</dt>
           <dd>室内车内甲醛治理，还你清新呼吸</dd>
           <dd><img src="/static/images/Formaldehyde.png" alt=""></dd>
           <dd><a href="/treatment">查看详情</a></dd>
         </dl>
-        <dl class="animate-this">
+        <dl class="hiding animated service" data-animation="fadeInDown" data-delay="300">
           <dt>新风系统</dt>
           <dd>让呼吸更自由，远离雾霾等伤害</dd>
           <dd><img src="/static/images/newSystem.png" alt=""></dd>
           <dd><a href="/newSys">查看详情</a></dd>
         </dl>
-        <dl class="animate-this">
+        <dl class="hiding animated service" data-animation="fadeInLeft" data-delay="600">
           <dt>室内空气检测</dt>
           <dd>对身边的空气环境全方位了解</dd>
           <dd><img src="/static/images/airTest.png" alt=""></dd>
@@ -73,7 +63,7 @@
             <a href="#"><span>华夏君安产品中心</span></a>
           </li>
           @for($i=0;$i<3;$i++)
-              <li>
+              <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($i+1)*300 }}">
                 <a href="#">
                   <i>{{ $products[$i]->product_name }}</i>
                   <img src="{{ $products[$i]->product_thumbnail_url }}" alt="">
@@ -83,7 +73,7 @@
         </ul>
         <ul class="clearfix">
           @for($i=3;$i<=5;$i++)
-            <li>
+            <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($i+1)*300 }}" >
               <a href="#">
                 <i>{{ $products[$i]->product_name }}</i>
                 <img src="{{ $products[$i]->product_thumbnail_url }}" alt="">
@@ -105,8 +95,8 @@
         <p class="animate-this">{{ $success->name }}<span>{{ $success->en_name}}</span></p>
         <div class="list-items animate-this">
           <ul class="clearfix">
-            @foreach($successList as $li)
-            <li>
+            @foreach($successList as $key=>$li)
+            <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($key+1)*300 }}">
               <div>
                 <img src="{{ $li->sm_image_url }}" alt="">
               </div>
@@ -126,38 +116,14 @@
       <div class="honor">
         <p class="animate-this">荣誉资质<span>Honor and qualification of Huaxiajunan</span></p>
         <ul class="clearfix animate-this">
-        @foreach($honors as $honor)
-          <li>
+        @foreach($honors as $key=>$honor)
+          <li class="hiding animated" data-animation="fadeInRight" data-delay="{{ ($key+1)*300 }}">
             <div>
               <img src="{{ $honor->honor_image_url }}" alt="">
             </div>
             <p>{{ $honor->name }}</p>
           </li>
         @endforeach
-          {{--  <li>
-            <div>
-              <img src="/static/images/honor2.jpg" alt="">
-            </div>
-            <p>室内环境监测治理达标单位</p>
-          </li>
-          <li>
-            <div>
-              <img src="/static/images/honor3.jpg" alt="">
-            </div>
-            <p>室内环境监测治理达标单位</p>
-          </li>
-          <li>
-            <div>
-              <img src="/static/images/honor4.jpg" alt="">
-            </div>
-            <p>室内环境监测治理达标单位</p>
-          </li>
-          <li>
-            <div>
-              <img src="/static/images/honor5.jpg" alt="">
-            </div>
-            <p>室内环境监测治理达标单位</p>
-          </li>  --}}
         </ul>
         <ul class="clearfix animate-this">
           <li>
@@ -215,16 +181,7 @@
 
   </div>
 
-  <div id="content-bot" class="animate-this">
-    <div class="friendly-link">
-      <p>友情链接</p>
-      <ul class="clearfix">
-        @foreach($links as $link)
-          <li><a href="{{ $link->link_href }}" rel="nofollow">{{ $link->link_name }}</a></li>
-        @endforeach
-      </ul> 
-    </div>
-  </div>
+  @include('links.page')
 @endsection
 
 @section('scripts')

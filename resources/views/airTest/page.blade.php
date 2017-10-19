@@ -77,10 +77,11 @@
         </aside>
       </div>
       <div class="standard">
-        <p>标准及资质<span>Testing standards and qualifications</span></p>
+        <p class="hiding animated" data-animation="fadeInUp" data-delay="500">标准及资质<span>Testing standards and qualifications</span></p>
         <ul class="list-items">
-        @foreach($standards as $standard)
-          <li>
+        @foreach($standards as $key=>$standard)
+          @if($key==0 || $key==3)
+          <li class="hiding animated" data-animation="fadeInDown" data-delay="300">
             <div>
               <img src="{{ $standard->standard_image_url }}" alt="室内空气质量标准">
               <dl>
@@ -91,54 +92,25 @@
             </div>
             <p>{{ $standard->name }}</p>
           </li>
+          @else
+          <li class="hiding animated" data-animation="fadeInUp" data-delay="600">
+            <div>
+              <img src="{{ $standard->standard_image_url }}" alt="室内空气质量标准">
+              <dl>
+                <dt>&lt;&lt;{{ $standard->title }}&gt;&gt;</dt>
+                <dd>{{ $standard->content }}</dd>
+                <dd></dd>
+              </dl>
+            </div>
+            <p>{{ $standard->name }}</p>
+          </li>
+          @endif
         @endforeach
-          {{--  <li>
-            <div>
-              <img src="/static/images/standard2.jpg" alt="室内空气质量标准">
-              <dl>
-                <dt>&lt;&lt;室内空气质量标准&gt;&gt;</dt>
-                <dd>電林任關也師教費上質座局言天會電性界送工舞媽多？一者深的只，電何舉盡！這就的積手：安條據。立引義，特活的醫意變國選進來有整區生要保行高主路走興活以年母實；生較國提；事當對清初筆來代東科刻言早命一正上自，而離也決關話眼！產生沒有意義的文字組合（文章？），供排版時填充版面用，但不會因為字義而左右版型的判斷。文字、標點符號出現機率大致符合台灣文章習慣。聽說很多學排版</dd>
-                <dd></dd>
-              </dl>
-            </div>
-            <p>室内空气质量标准</p>
-          </li>
-          <li>
-            <div>
-              <img src="/static/images/standard3.jpg" alt="室内空气质量标准">
-              <dl>
-                <dt>&lt;&lt;室内空气质量标准&gt;&gt;</dt>
-                <dd>電林任關也師教費上質座局言天會電性界送工舞媽多？一者深的只，電何舉盡！這就的積手：安條據。立引義，特活的醫意變國選進來有整區生要保行高主路走興活以年母實；生較國提；事當對清初筆來代東科刻言早命一正上自，而離也決關話眼！產生沒有意義的文字組合（文章？），供排版時填充版面用，但不會因為字義而左右版型的判斷。文字、標點符號出現機率大致符合台灣文章習慣。聽說很多學排版</dd>
-                <dd></dd>
-              </dl>
-            </div>
-            <p>室内空气质量标准</p>
-          </li>
-          <li>
-            <div>
-              <img src="/static/images/standard4.jpg" alt="室内空气质量标准">
-              <dl>
-                <dt>&lt;&lt;室内空气质量标准&gt;&gt;</dt>
-                <dd>電林任關也師教費上質座局言天會電性界送工舞媽多？一者深的只，電何舉盡！這就的積手：安條據。立引義，特活的醫意變國選進來有整區生要保行高主路走興活以年母實；生較國提；事當對清初筆來代東科刻言早命一正上自，而離也決關話眼！產生沒有意義的文字組合（文章？），供排版時填充版面用，但不會因為字義而左右版型的判斷。文字、標點符號出現機率大致符合台灣文章習慣。聽說很多學排版</dd>
-                <dd></dd>
-              </dl>
-            </div>
-            <p>室内空气质量标准</p>
-          </li>  --}}
         </ul>
       </div>
     </main>
   </section>
 </div>
 
-<div id="content-bot">
-  <div class="friendly-link">
-    <p>友情链接</p>
-    <ul class="clearfix">
-      @foreach($links as $link)
-        <li><a href="{{ $link->link_href }}">{{ $link->link_name }}</a></li>
-      @endforeach
-    </ul> 
-  </div>
-</div>
+@include('links.page')
 @endsection

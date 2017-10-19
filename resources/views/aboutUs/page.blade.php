@@ -6,7 +6,7 @@
 
 @section('styles')
   {{--  为什么写在父模板上不起作用?  --}}
-  <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
+  {{--  是因为使用了@section('script') @show  --}}
   <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 @endsection
 
@@ -35,28 +35,28 @@
 
         <div class="tabs-content">
           <ul class="list-icons">
-            <li>
+            <li class="hiding  animated service" data-animation="fadeInRight" data-delay="300">
               <i class="icon icon-auSpirit"></i>
               <dl>
                 <dt>企业精神</dt>
                 <dd>小小一抹绿之源、只为绿色满人间</dd>
               </dl>
             </li>
-            <li>
+            <li class="hiding  animated service" data-animation="fadeInRight" data-delay="600">
               <i class="icon icon-auIdea"></i>
               <dl>
                 <dt>企业理念</dt>
                 <dd>诚实做人、踏实做事、客户满意是我们的生存之本</dd>
               </dl>
             </li>
-            <li>
+            <li class="hiding  animated service" data-animation="fadeInRight" data-delay="900">
               <i class="icon icon-auGoal"></i>
               <dl>
                 <dt>企业目标</dt>
                 <dd>中国室内空气治理行业领导者</dd>
               </dl>
             </li>
-            <li>
+            <li class="hiding  animated service" data-animation="fadeInRight" data-delay="1200">
               <i class="icon icon-auMission"></i>
               <dl>
                 <dt>企业使命</dt>
@@ -65,7 +65,7 @@
             </li>
           </ul>
           <div class="content-bot">
-            <ul class="bot-left">
+            <ul class="bot-left hiding animated" data-animation="fadeInRight" data-delay="300">
               <li>
                 <dl>
                   <dt>企业价值观</dt>
@@ -145,14 +145,5 @@
   </section>
 </div>
 
-<div id="content-bot">
-  <div class="friendly-link">
-    <p>友情链接</p>
-    <ul class="clearfix">
-      @foreach($links as $link)
-        <li><a href="{{ $link->link_href }}" rel="nofollow">{{ $link->link_name }}</a></li>
-      @endforeach
-    </ul> 
-  </div>
-</div>
+@include('links.page')
 @endsection

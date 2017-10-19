@@ -16,8 +16,8 @@
 
   <link rel="stylesheet" href="{{ asset('css/sprite.css') }}">
 
-  <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-  
+  <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
   <!-- 跳转到不同的网页,title的名字不一样 -->
   <title>@yield('title',config('app.name'))</title>
   
@@ -66,33 +66,55 @@
 
     <script src="{{ asset('static/js/jquery.waypoints.min.js') }}"></script>
 
+    <script src="{{ asset('js/jquery.appear.js') }}"></script>
+
     <script>
-    var ssAnimations = function() {
-      $('.animate-this').waypoint({
-        element: document.getElementsByClassName('animate-this'),
-        handler: function(direction) {
-          var defAnimationEfx = "fadeInUp";
-          if ( direction === 'down' && !$(this.element).hasClass('animated')) {
-            $(this.element).addClass('item-animate');
-            setTimeout(function() {
-              $('body .animate-this.item-animate').each(function(ctr) {
-                var el = $(this),
-                animationEfx = el.data('animate') || null;	
-                if (!animationEfx) { animationEfx = defAnimationEfx; }
-                setTimeout( function () {
-                  el.addClass(animationEfx + ' animated');
-                  el.removeClass('item-animate');
-                }, ctr * 30);
-              });								
-            }, 100);
-          }
-          // trigger once only
-          this.destroy(); 
-        }, 
-        offset: '100%'
-      });
-    }
-      ssAnimations();
+      function initAnimations() {
+        var $animated = $(".animated");
+
+        $animated.appear({
+            force_process: true
+        });
+
+        $animated.on("appear", function() {
+
+            var $el = $(this);
+
+            var animation = $el.data("animation");
+            var delay = $el.data("delay");
+
+            // Mofile fix
+            if ($(window).width() < 768) {
+                delay = 0;
+            }
+
+            if (delay) {
+
+                setTimeout(function() {
+                    $el.addClass(animation);
+                    $el.addClass("showing");
+                    $el.removeClass("hiding");
+                }, delay);
+            } else {
+
+                $el.addClass(animation);
+                $el.addClass("showing");
+                $el.removeClass("hiding");
+            }
+        });
+
+        // Service hover animation
+        $(".service").hover(function() {
+            $("img", this).addClass("animated tada");
+            $("i", this).addClass("animated tada");
+        }, function() {
+            $("img", this).removeClass("animated tada");
+            $("i", this).removeClass("animated tada");
+        });
+      }
+    $().ready(function() {
+      initAnimations();
+    });
     </script>
   @yield('scripts')
   </body>

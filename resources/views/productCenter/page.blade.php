@@ -81,8 +81,8 @@
     </aside>
     <div class="list-items">
       <ul>
-        @foreach($products as $product)
-          <li>
+        @foreach($products as $key=>$product)
+          <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($key+1)*200 }}">
             <dl>
               <dt><img src="{{ $product->product_thumbnail_url }}" alt="家用壁挂式新风系统"></dt>
               <dd>
@@ -92,105 +92,6 @@
             </dl>
           </li>
         @endforeach
-        {{--  <li>
-          <dl>
-            <dt><img src="/static/images/product2.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product3.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product1.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product2.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product3.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product1.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product2.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product3.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product1.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product2.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt><img src="/static/images/product3.jpg" alt="家用壁挂式新风系统"></dt>
-            <dd>
-              <p>家用壁挂式新风系统</p>
-              <a href="#" title="家用壁挂式新风系统">快速报价</a>
-            </dd>
-          </dl>
-        </li>  --}}
       </ul>
       <div class="pagination">
         <a href="#">首页</a>
