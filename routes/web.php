@@ -1,5 +1,8 @@
 <?php
 
+use App\Slides;
+use Illuminate\Http\Response;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,9 @@
 // });
 
 // 这样就行了
-Route::get('/', 'UserController@index');
+Route::get('/', function(){
+    return view('index.page');
+});
 
 
 
@@ -38,6 +43,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 
 
+// Route::get('/index', ['as' => 'index',function(){}]);
 Route::get('/index', 'UserController@index');
 Route::get('/about', 'UserController@about');
 Route::get('/airTest', 'UserController@airTest');
@@ -50,11 +56,17 @@ Route::get('/success', 'UserController@success');
 Route::get('/treatment', 'UserController@treatment');
 // 先搞懂业务逻辑再配置路由,产品中心->产品详情->产品类别->产品id->客户提交的表单  提交后的动作('提示提交成功按钮')
 Route::post('/productDetail/{category}/{id}', 'FeedbackController@store');
+Route::match('/task',function(){
+    $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
+    return response($slides1);
+});
+
+
 // 下述方法报错: 
 // Route::get('/index', function(){
 //     return view()->file('/public/page.html');
 // });
-
-
+// Route::get('/index/{id}', 'UserController@fuck');
+// Route::resource('/index', 'TaskController');
 
 

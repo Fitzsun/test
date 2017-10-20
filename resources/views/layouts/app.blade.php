@@ -112,8 +112,21 @@
             $("i", this).removeClass("animated tada");
         });
       }
-    $().ready(function() {
+    $(document).ready(function() {
       initAnimations();
+      $.ajax({
+        type:'get',
+        async:true,
+        url:'/task',
+        success:function(data) {
+          console.log(data);
+          // ajax获取图片信息,成功后赋值给picInfo
+          {{--  WangeSlide.config.picInfo = data;  --}}
+          // 成功获取信息后执行WangeSlide函数
+          
+          // WangeSlide.init();
+        }
+      });
     });
     </script>
   @yield('scripts')

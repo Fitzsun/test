@@ -12,6 +12,7 @@ use App\Category;
 use App\Standard;
 use App\ProductNav;
 use Illuminate\Http\Request;
+// use Symfony\Component\HttpFoundation\Response;
 // 在view.php中配置前端页面的目录位置
 // 使其识别html php结尾的文件 
 // \View::addExtension('html', 'php'); 是程序识别html和PHP结尾的视图文件
@@ -20,21 +21,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        // get()获取的是一个集合 [{"id":8,"parent_id":0,"name":"\u6210\u529f\u6848\u4f8b","en_name":"success","path":"\/success","description":"desc","image_url":"","created_at":"2017-10-11 07:47:26","updated_at":"2017-10-11 07:47:26"}]
-        $success = Category::where('name', '=', '成功案例')->first();
-        $desc = Category::where('name','=','公司简介')->first();
-        $successList = Success::take(5)->get();
-        // 一级轮播图
-        $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
-        // 二级轮播图
-        $slides2 = Slides::where('level','=',2)->orderBy('order','desc')->take(3)->get();
-        // 首页新闻
-        $news = News::where('is_index','=',true)->orderby('order','asc')->take(6)->get();
-        // 产品
-        $products = Product::orderby('product_order','asc')->take(6)->get();
-        // 荣誉
-        $honors = Standard::where('category_id','=',0)->orderby('order','asc')->take(5)->get();
-        return view('index.page',compact('success','desc','successList','slides1','slides2','news','products','honors'));
+         // get()获取的是一个集合 [{"id":8,"parent_id":0,"name":"\u6210\u529f\u6848\u4f8b","en_name":"success","path":"\/success","description":"desc","image_url":"","created_at":"2017-10-11 07:47:26","updated_at":"2017-10-11 07:47:26"}]
+         $success = Category::where('name', '=', '成功案例')->first();
+         $desc = Category::where('name','=','公司简介')->first();
+         $successList = Success::take(5)->get();
+         // 一级轮播图
+         $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
+         // 二级轮播图
+         $slides2 = Slides::where('level','=',2)->orderBy('order','desc')->take(3)->get();
+         // 首页新闻
+         $news = News::where('is_index','=',true)->orderby('order','asc')->take(6)->get();
+         // 产品
+         $products = Product::orderby('product_order','asc')->take(6)->get();
+         // 荣誉
+         $honors = Standard::where('category_id','=',0)->orderby('order','asc')->take(5)->get();
+         return view('index.page',compact('success','desc','successList','slides1','slides2','news','products','honors'));
     }
 
     public function about()
@@ -93,4 +94,5 @@ class UserController extends Controller
     {
         return view('treatment.page');
     }
+
 }

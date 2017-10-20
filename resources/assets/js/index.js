@@ -266,3 +266,7 @@ $(document).ready(function(){
 
   cssSlidy();
 });
+
+
+
+// jquery 按需加载轮播图
