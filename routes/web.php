@@ -44,22 +44,19 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 
 // Route::get('/index', ['as' => 'index',function(){}]);
-Route::get('/index', 'UserController@index');
-Route::get('/about', 'UserController@about');
-Route::get('/airTest', 'UserController@airTest');
-Route::get('/news', 'UserController@news');
-Route::get('/newsDetail', 'UserController@newsDetail');
-Route::get('/newSys', 'UserController@newSys');
-Route::get('/product', 'UserController@product');
-Route::get('/productDetail', 'UserController@productDetail');
-Route::get('/success', 'UserController@success');
-Route::get('/treatment', 'UserController@treatment');
+Route::get('index', 'UserController@index');
+Route::get('about', 'UserController@about');
+Route::get('airTest', 'UserController@airTest');
+Route::get('news', 'UserController@news');
+Route::get('newsDetail', 'UserController@newsDetail');
+Route::get('newSys', 'UserController@newSys');
+Route::get('product', 'UserController@product');
+Route::get('productDetail', 'UserController@productDetail');
+Route::get('success', 'UserController@success');
+// Route::get('/treatment', 'UserController@treatment');
 // 先搞懂业务逻辑再配置路由,产品中心->产品详情->产品类别->产品id->客户提交的表单  提交后的动作('提示提交成功按钮')
 Route::post('/productDetail/{category}/{id}', 'FeedbackController@store');
-Route::match('/task',function(){
-    $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
-    return response($slides1);
-});
+Route::view('/treatment','treatment.page',['name' => 'Laravel学院']);
 
 
 // 下述方法报错: 

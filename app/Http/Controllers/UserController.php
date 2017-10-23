@@ -27,6 +27,11 @@ class UserController extends Controller
          $successList = Success::take(5)->get();
          // 一级轮播图
          $slides1 = Slides::where('level','=',1)->orderBy('order','desc')->take(3)->get();
+         
+        //  $nodes = DB::table('slides')->where('level','=',1)->orderBy('order','desc')->take(3)->get()->map(function ($value) {
+        //     return (array)$value;
+        // })->toArray();
+
          // 二级轮播图
          $slides2 = Slides::where('level','=',2)->orderBy('order','desc')->take(3)->get();
          // 首页新闻
