@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Links;
+use App\Link;
 use App\Contact;
 use App\Category;
 use Encore\Admin\Config\Config;
@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Config::load();
 
         // 底部公用的友情链接部分
-        $links = Links::take(12)->get();
+        $links = Link::take(12)->get();
         view()->share('links',$links);
 
         

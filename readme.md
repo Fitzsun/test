@@ -46,3 +46,14 @@ Event::listen(StatementPrepared::class, function ($event) {
 ### 怎么将对象数组转化为二维的纯索引数组
 
 ### url.indexof is not a function
+
+### 路由
+- 路由参数
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+### http://blog.csdn.net/ghost_hell/article/details/53484438
+
+### 表单  路由跳转

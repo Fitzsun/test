@@ -1,23 +1,51 @@
-.carousel-container {
+#slidebox {
   position: relative;
   width: 100%;
-}
-.bd {
-  width: 100%;
+  height: 600px;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
 }
-.carousel-inner {
+#panel {
+  max-width: 1920px;
+  margin: 0 auto;
   position: relative;
+  background: url("http://www.euku.net/html/xysite/skin/default/lpt/images/load.gif") no-repeat center;
 }
-.carousel-inner li a {
+#slide_bg {
+  z-index: -999;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+#panel img.loaded {
+  opacity: 1;
+}
+#panel ul {
+  max-height: 600px;
+  border-bottom: 1px solid transparent;
+}
+#panel li {
+  list-style: none;
   display: block;
 }
-.carousel-caption {
-  position: relative;
+#slide {
+  display: none;
 }
-.carousel-indicator {
+#slide_text {
+  position: absolute;
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  left: 10%;
+  bottom: 35px;
+  padding: 0 15px;
+}
+#slide_text a {
+  color: white;
+}
+#trigger ul {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,10 +62,10 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.carousel-indicator .active {
+#trigger ul .cur {
   background: #48abff;
 }
-.carousel-indicator > li {
+#trigger ul > li {
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -47,15 +75,14 @@
   position: absolute;
   height: 100%;
   width: 24px;
-  line-height: 400px;
 }
 .carousel-control.prev {
-  top: 0;
+  top: 50%;
   right: 50%;
   margin-right: 576px;
 }
 .carousel-control.next {
-  top: 0;
+  top: 50%;
   left: 50%;
   margin-left: 576px;
 }

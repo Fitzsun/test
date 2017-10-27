@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Slides extends Model
+class Slide extends Model
 {
     protected $table='slides';
     // public function setImgUrlAttribute($imgUrl)

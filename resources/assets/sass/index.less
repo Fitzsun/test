@@ -1,36 +1,64 @@
-.carousel-container{
+#slidebox {
   position: relative;
-  width:100%;
-  // height:400px;
-  // overflow: hidden;
+  width: 100%;
+  height:600px;
+  // js控制height
+  margin: 0 auto;
 }
 
-.bd{
-  // width:1920px;
-  width:100%;
-  // height:400px;
+#panel {
+  // 考虑屏幕不同尺寸,最大为1920,超过1920的显示灰色或其他背景;
+  max-width:1920px;
   margin:0 auto;
-  overflow: hidden;
   position: relative;
-}
-.carousel-inner{
-  position: relative;
-  // width:5760px;
-  // width:300%;
-  li{
-    a{
-      display: block;
-      // width:100%;
-    }
-  }
+  background: url("http://www.euku.net/html/xysite/skin/default/lpt/images/load.gif") no-repeat center;
 }
 
-.carousel-caption{
-  position: relative;
-
+#slide_bg {
+  // 背景置于底层;
+  z-index: -999;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.carousel-indicator{
+#panel img.loaded {
+  opacity: 1;
+}
+
+#panel ul {
+  max-height:600px;
+  border-bottom: 1px solid transparent;
+}
+
+#panel li {
+  // width:100%;
+  list-style: none;
+  display: block;
+}
+
+#slide {
+  display: none;
+}
+
+#slide_text {
+  position: absolute;
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  left: 10%;
+  bottom: 35px;
+  padding: 0 15px;
+}
+
+#slide_text a {
+  color: white;
+}
+
+#trigger ul{
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -42,20 +70,14 @@
   bottom:5%;
   left:50%;
   transform: translateX(-50%);
-  .active{
+  .cur{
     background:#48abff;
   }
   >li{
-    // float: left;
     width:14px;
     height:14px;
-    // margin-left:12px;
     border-radius:50%;
     border:1px solid #48abff;
-    // background:#48abff;
-    // &:first-of-type{
-    //   margin-left:0;
-    // }
   }
 }
 
@@ -63,16 +85,17 @@
   position: absolute;
   height:100%;
   width:24px;
-  line-height: 400px;
   // position: absolute;
   &.prev{
-    top:0;
+    top:50%;
     right:50%;
+    // transform:translateY(50%);
     margin-right:576px;
   }
   &.next{
-    top:0;
+    top:50%;
     left:50%;
+    // transform:translateY(50%);
     margin-left:576px;
   }
 }

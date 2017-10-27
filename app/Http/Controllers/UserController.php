@@ -80,18 +80,20 @@ class UserController extends Controller
     public function product()
     {
         $navs =ProductNav::with('allChildrenNavs')->get();
-        $products =Product::take(12)->get();
+        $products =Product::paginate(12);
         return view('productCenter.page',compact('navs','products'));
     }
 
-    public function productDetail()
+    public function productDetail($product_id)
     {
-        return view('productCenterDetail.page');
+        // $arg2 = request()->route('product_id');
+        $product = Product::find($product_id)->get();
+        return view('productCenterDetail.page',compact('product'));
     }
 
     public function success()
     {
-        $successList = Success::where('id','>','5')->take(8)->get();
+        $successList = Success::where('id','>','5')->paginate(8);
         return view('success.page',compact('successList'));
     }
 

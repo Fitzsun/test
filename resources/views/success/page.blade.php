@@ -53,18 +53,7 @@
         <h1>这是第四个Tab页</h1>
       </div>
     </div>
-    <div class="pagination">
-      <a href="#">首页</a>
-      <a href="#">上一页</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">...</a>
-      <a href="#">下一页</a>
-      <a href="#">尾页</a>
-      <a>共<span>10</span>页</a>
-    </div>
+    @include('pagination.default', ['paginator' => $successList])
   </div>
 </section>
   

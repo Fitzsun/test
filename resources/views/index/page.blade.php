@@ -14,9 +14,85 @@
         margin:50px 0;
         background:url(/static/images/smbanner.png) no-repeat scroll center;
       }
+      #sidebar{
+        position:fixed;
+        width:1200px;
+        top:50%;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      #sidebar ul{
+        margin-left:1200px;
+        width:100px;
+        height:300px;
+        border:1px solid #48abff;
+      }
+      #sidebar ul>li:not(:last-of-type){
+        position:relative;
+        cursor:pointer;
+        background:#48abff;
+        width:100%;
+        height:100px;
+        line-height:100px;
+      }
+      #sidebar ul>li:hover>div{
+        display:block;
+      }
+      #sidebar div{
+        display:none;
+        position:absolute;
+        right:120px;
+      }
+      #sidebar div>img:nth-of-type(2){
+        position:absolute;
+        top:7px;
+        left:7px;
+      }
+      #sidebar li:first-of-type div{
+        top:0;
+      }
+      #sidebar li:nth-of-type(2) div{
+        top:-22px;
+      }
+      #sidebar li>img{
+        vertical-align:middle;
+      }
+      #sidebar li:first-of-type{
+        border-bottom:1px solid #fff;
+      }
+      #sidebar a{
+        display:block;
+        padding-top:15px;
+        width:100%;
+        height:100%;
+      }
+      #sidebar p{
+        position:absolute;
+        width:100%;
+        height:100px;
+        padding:15px 0;
+        line-height:35px;
+        margin:0;
+        text-align:center;
+      }
+      #sidebar p>span:first-child{
+        font-size:16px;
+        color:#666;
+      }
+      #sidebar p>span:last-child{
+        font-size:24px;
+        color:#48abff;
+      }
+      #sidebar span{
+        color:#48abff;
+        font-size:25px;
+      }
     </style>
-  <div class="carousel-container" class="clearfix">
-    <div class="bd">
+  <div id="slidebox" class="clearfix">
+    <div id="panel">
+      <ul></ul>
+    </div>
+    {{--  <div class="bd">
       <ul class="carousel-inner clearfix">
         @foreach($slides1 as $slide)
           <li>
@@ -29,27 +105,27 @@
       <li class="active"></li>
       <li></li>
       <li></li>
-    </ol>
+    </ol>  --}}
     <!-- 设置轮播控制器 -->
     <a class="carousel-control prev" href="#"><span class="icon icon-prevSlide"></span></a>
     <a class="carousel-control next" href="#"><span class="icon icon-nextSlide"></span></a>
   </div>
   <section id="desc">
     <main>
-      <div class="desc-list overflow clearfix overflow-scroll">
-        <dl class="hiding animated service" data-animation="zoomIn" data-delay="300">
+      <div class="desc-list overflow clearfix">
+        <dl class="hiding animated service" data-animation="zoomIn" data-delay="200">
           <dt>甲醛治理</dt>
           <dd>室内车内甲醛治理，还你清新呼吸</dd>
           <dd><img src="/static/images/Formaldehyde.png" alt=""></dd>
           <dd><a href="/treatment">查看详情</a></dd>
         </dl>
-        <dl class="hiding animated service" data-animation="zoomIn" data-delay="600">
+        <dl class="hiding animated service" data-animation="zoomIn" data-delay="400">
           <dt>新风系统</dt>
           <dd>让呼吸更自由，远离雾霾等伤害</dd>
           <dd><img src="/static/images/newSystem.png" alt=""></dd>
           <dd><a href="/newSys">查看详情</a></dd>
         </dl>
-        <dl class="hiding animated service" data-animation="zoomIn" data-delay="900">
+        <dl class="hiding animated service" data-animation="zoomIn" data-delay="600">
           <dt>室内空气检测</dt>
           <dd>对身边的空气环境全方位了解</dd>
           <dd><img src="/static/images/airTest.png" alt=""></dd>
@@ -178,8 +254,36 @@
       </div>
     </main>
   </section>
-
   </div>
+  {{--  侧边栏  --}}
+  <div id="sidebar">
+    <ul>
+      <li>
+        <img src="{{ asset('static/images/sidebar-phone.png') }}" alt="">
+        <div>
+          <p>
+            <span>全国服务热线</span><br />
+            <span>130-1111-6779</span>
+          </p>
+          <img src="{{ asset('static/images/sidebar-telback.png') }}" alt="">
+        </div>
+      </li>
+      <li>
+        <img src="{{ asset('static/images/sidebar-smcode.png') }}" alt="">
+        <div>
+          <img src="{{ asset('static/images/sidebar-codeback.png') }}" alt="">
+          <img src="{{ asset('static/images/sidebar-code.jpg') }}" alt="">
+        </div>
+      </li>
+      <li>
+        <a href="#">
+          <img src="{{ asset('static/images/toTop.png') }}" alt="">
+          <span>TOP</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
 
   @include('links.page')
 @endsection
@@ -187,11 +291,9 @@
 @section('scripts')
   @parent
   <script>
-    {{--  var picInfo = @json($slides1);  --}}
+    var picInfo = @json($slides1);
 
-    $(function (){
-      var picInfo = @json($slides1);
-      var WangeSlide = (function() {
+    var WangeSlide = (function() {
         //配置
         var config = {
             //轮播图尺寸
@@ -201,17 +303,18 @@
             autoSwitch : true,
             //自动切换间隔时间（毫秒）
             interval : 6000,
+            //轮播图图片路径
             //轮播图图片信息：图片文件名 / 图片标题 / 图片指向链接
             picInfo : picInfo
         };
         //获取图片信息
         /**
-         * @param index 图片所在的索引值
+        * @param index 图片所在的索引值
         **/
         var getImgInfo = function(index) {
-            var imgSrc = config.picInfo[index]['imgUrl'],
-                imgAlt = config.picInfo[index]['slide_name'],
-                imgUrl = config.picInfo[index]['path'],
+            var imgSrc = config.picInfo[index]["imgUrl"],
+                imgAlt = config.picInfo[index]["slide_name"],
+                imgUrl = config.picInfo[index]["path"],
                 imgId = 'slide_' + (index+1).toString(),
                 imgHtml = '<li id="' + imgId + '">' +
                             '    <a href="' + imgUrl +'" title="' + imgAlt + '" class="pic">' +
@@ -230,7 +333,7 @@
         //图片完全加载后缓慢加载显示
         var fadeInImg = function(el, speed) {
             //console.log(el)
-            el.find("img").load(function() {
+            el.find("img").on('load',function() {
                 el.find("img").addClass("loaded");
                 el.fadeIn(speed);
             });
@@ -238,63 +341,71 @@
         
         //图片切换
         /**
-         * @param index 图片所在的索引值
-         * @param triggerCurEl 当前触发节点元素
+        * @param index 图片所在的索引值
+        * @param triggerCurEl 当前触发节点元素
         **/
         var imgSwitch = function(index, triggerCurEl) {
             var slideId = 'slide_' + (index+1).toString(),
                 slideIdEl = document.getElementById(slideId);
             if (slideIdEl) {
                 //如果已有对应的元素，则显示已有元素
-                var innerLi = $('.carousel-inner li');
-                innerLi.hide();
+                var panelLi = $('#panel ul li');
+                panelLi.hide();
                 $(slideIdEl).fadeIn('slow');
             } else {
                 //如果还没有对应的元素，则注入元素
-                $(getImgInfo(index).imgHtml).appendTo($('.carousel-innner'));
-                var innerLi = $('.carousel-inner li');
-                innerLi.hide();
+                $(getImgInfo(index).imgHtml).appendTo($('#panel ul'));
+                var panelLi = $('#panel ul li');
+                panelLi.hide();
                 //载入显示图片
                 fadeInImg($("#" +slideId), 'slow');
             }
             
             //获取图片的 alt 作为显示信息
-           $('.carousel-text').html(getImgInfo(index).slideTextHtml);
+          $('#slide_text').html(getImgInfo(index).slideTextHtml);
             
-            //当前状态 active
-            $('.carousel-indicator li').removeClass('active');
-            triggerCurEl.addClass('active');
+            //当前状态 cur
+            $('#trigger ul li').removeClass('cur');
+            triggerCurEl.addClass('cur');
         };
         
         //轮播图
         var slide = function() {
-            //设置轮播图尺寸(百分比,设计成响应式)
-            $('.carousel-inner').css({'width' : picInfo.length * 100 + '%'});
-            $('.carousel-inner li').css({'float' : 'left', 'width' : (100 / picInfo.length) + '%', 'height' : 'auto'});
-            var result = getImgInfo(0).imgHtml;
+            //设置轮播图尺寸
+            $('#panel').css({'width' : picInfo.length * 100 + '%'});
+            $('#panel li').css({'float' : 'left', 'width' : (100 / picInfo.length) + '%', 'height' : 'auto'});
+            //$('#panel').css({
+            //    'width' : config.width + 'px',
+            //   'height' : config.height + 'px'
+            //});
+            var result = getImgInfo(0).imgHtml
             //初使化轮播图，只加载第一张图片信息
-            $('.carousel-inner').html($(result));
+            $('#panel ul').html($(result));
             //载入显示图片
             fadeInImg($('#slide_1'), 500);
             
-            //注入触发器容器 + 轮播图文字容器
-            var trigger = '<ul class="carousel-indicator"></ul>',
-                slideText = '<ul class="carousel-text"></ul>';
-            $('.carousel-container').after(trigger + slideText);
+            //注入背景层 + 触发器容器 + 轮播图文字容器
+            var slideBg = '<div id="slide_bg"></div>',
+                trigger = '<div id="trigger"></div>',
+                slideText = '<div id="slide_text"></div>';
+            $('#panel').after(slideBg + trigger);
             
             //获取图片的 alt 作为显示信息
-            $('.carousel-text').html(getImgInfo(0).slideTextHtml);
+            $('#slide_text').html(getImgInfo(0).slideTextHtml);
             
             //注入触发节点
+            var triggerUl = $('<ul></ul>');
+            triggerUl.appendTo($('#trigger'));
             for (var i=0, j=config.picInfo; i<j.length; i++) {
-                $('<li>' + (i+1).toString() +'</li>').appendTo(trigger);
+                $('<li>' + (i+1).toString() +'</li>').appendTo(triggerUl);
             }
             
             //当前状态 cur
-            $('.carousel-indicator li').eq(0).addClass('active');
+            $('#trigger ul li').eq(0).addClass('cur');
+            $('')
             //点击触发节点
-            $(".carousel-indicator li").click(function(){
-                var index = $(".carousel-indicator li").index($(this));
+            $("#trigger ul li").click(function(){
+                var index = $("#trigger ul li").index($(this));
                 //console.log(index)
                 imgSwitch(index,$(this));
             })
@@ -302,7 +413,7 @@
             
             //鼠标悬停时，停止切换
             var goSwitch = true;
-            $('.carousel-container').hover(
+            $('#panel').hover(
                 function() {goSwitch = false},
                 function() {goSwitch = true}
             );
@@ -312,11 +423,11 @@
                 setInterval(function() {
                     if (goSwitch) {
                         //判断当前cur所在的索引值
-                        var index = parseInt($('.active','.carousel-indicator').text()) - 1;
+                        var index = parseInt($('.cur','#trigger').text()) - 1;
                         if (index > (config.picInfo.length-2)) {
                             index = -1;
                         }
-                        imgSwitch((index+1), $('.carousel-indicator li:eq(' + (index+1) + ')'));
+                        imgSwitch((index+1), $('#trigger ul li:eq(' + (index+1) + ')'));
                     }
                 }, config.interval);
             }
@@ -328,15 +439,9 @@
                 slide();
             }
         }
-      })();
-       WangeSlide.init();
-    })
-    
+    })(picInfo);
+    WangeSlide.init();
 
-    $(document).ready(function() {
-      initAnimations();
-     
-    });
   </script>
   <script src="{{ asset('js/index.js') }}"></script>
 @endsection

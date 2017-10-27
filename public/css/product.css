@@ -153,7 +153,7 @@ main .list-items {
   width: 950px;
   margin-left: 250px;
 }
-main .list-items ul {
+main .list-items ul:first-of-type {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,25 +164,25 @@ main .list-items ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-main .list-items ul li {
+main .list-items ul:first-of-type li {
   position: relative;
   width: 300px;
   height: 350px;
   margin-bottom: 25px;
   border: 1px solid #ccc;
 }
-main .list-items ul li:hover {
+main .list-items ul:first-of-type li:hover {
   border: 1px solid #edc901;
 }
-main .list-items ul li:hover dd > a {
+main .list-items ul:first-of-type li:hover dd > a {
   background: #edc901;
 }
-main .list-items ul li dd {
+main .list-items ul:first-of-type li dd {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
-main .list-items ul li dd a {
+main .list-items ul:first-of-type li dd a {
   display: block;
   width: 200px;
   height: 30px;
@@ -191,8 +191,4 @@ main .list-items ul li dd a {
   background: #48abff;
   color: #fff;
   margin: 20px auto 30px;
-}
-main .pagination a {
-  color: #999;
-  padding: 5px 10px;
 }

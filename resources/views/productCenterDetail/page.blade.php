@@ -28,8 +28,8 @@
         <span>位置：</span>
         <ul class="bread-crumbs">
           <li><a href="#">产品中心</a>&gt;&gt;</li>
-          <li><a href="#">新风系统</a>&gt;&gt;</li>
-          <li><a href="#">家用新风系统</a></li>
+          <li><a href="#">{{ $product->category_id }}</a>&gt;&gt;</li>
+          <li><a href="#">{{ $product->name }}</a></li>
         </ul>
       </nav>
       <div class="pictureShow">

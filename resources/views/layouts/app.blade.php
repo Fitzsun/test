@@ -18,6 +18,8 @@
 
   <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- 跳转到不同的网页,title的名字不一样 -->
   <title>@yield('title',config('app.name'))</title>
   
@@ -112,6 +114,9 @@
             $("i", this).removeClass("animated tada");
         });
       }
+    $(document).ready(function() {
+      initAnimations();
+    });
     </script>
   @yield('scripts')
   </body>

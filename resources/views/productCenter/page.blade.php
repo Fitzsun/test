@@ -37,12 +37,12 @@
           @foreach($navs as $nav)
             @if($nav->parent_id === 0)
               <li class="accordion-category">
-                <input type="radio" name="a-toggle" id="one" checked>      
-                <label for="one" class="accordion-title">{{ $nav->name }}</label>
+                <input type="radio" name="a-toggle" id="{{ $nav->label }}" checked>      
+                <label for="{{ $nav->label }}" class="accordion-title">{{ $nav->name }}</label>
 
                 <ul class="accordion-items">   
                   @foreach($nav->allChildrenNavs as $li2) 
-                    <li><a href="{{ $li2->path }}">{{ $li2->name }}</a></li>    
+                    <li><a href="{{ $li2->product_path }}">{{ $li2->name }}</a></li>    
                   @endforeach                
                 </ul>      
               </li>
@@ -82,29 +82,18 @@
     <div class="list-items">
       <ul>
         @foreach($products as $key=>$product)
-          <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($key+1)*200 }}">
+          <li class="hiding animated" data-animation="fadeInUp" data-delay="{{ ($key+1)*50 }}">
             <dl>
               <dt><img src="{{ $product->product_thumbnail_url }}" alt="家用壁挂式新风系统"></dt>
               <dd>
                 <p>{{ $product->product_name }}</p>
-                <a href="productDetail/{{ $product->product_category }}/{{ $product->id }}" title="家用壁挂式新风系统">快速报价</a>
+                <a href="productDetail/{{ $product->id }}" title="家用壁挂式新风系统">快速报价</a>
               </dd>
             </dl>
           </li>
         @endforeach
       </ul>
-      <div class="pagination">
-        <a href="#">首页</a>
-        <a href="#">上一页</a>
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">...</a>
-        <a href="#">下一页</a>
-        <a href="#">尾页</a>
-        <a>共<span>10</span>页</a>
-      </div>
+      @include('pagination.default', ['paginator' => $products])
     </div>  
   </main>
 </section>

@@ -303,3 +303,16 @@ a {
   right: 0;
   top: -13.5px;
 }
+#pagination {
+  margin-top: 50px;
+}
+#pagination > li {
+  display: inline-block;
+}
+#pagination > li .active {
+  color: red;
+}
+#pagination > li a {
+  color: #999;
+  padding: 5px 10px;
+}
